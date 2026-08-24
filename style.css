@@ -5109,3 +5109,42 @@ html, body {
         border-radius: 16px !important;
     }
 }
+
+
+/* =========================================================================
+   REMOVE EXTRA / DOUBLE SIDE SCROLLBAR
+   ========================================================================= */
+html {
+    max-width: 100%;
+    overflow-x: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: clip !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+/* Hide scrollbar for Chrome, Safari, Edge, Opera */
+::-webkit-scrollbar {
+    width: 0px !important;
+    height: 0px !important;
+    display: none !important;
+    background: transparent !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 0px !important;
+    height: 0px !important;
+    display: none !important;
+    background: transparent !important;
+}
+
+* {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
