@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Stackly Accounting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2001">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="login-page">
+    <div class="mobile-overlay"></div>
+
+    <div class="login-split-container">
+
+        <!-- LEFT SIDE: Image & Content -->
+        <div class="login-left">
+            <img src="assets/images/team-img.webp" alt="Join Stackly" class="login-bg-img">
+            <div class="login-overlay"></div>
+
+            <!-- Logo pinned to top -->
+            <div class="login-logo-wrap">
+                <a href="index.html" class="login-logo">
+                    <img src="assets/images/stackly-logo.webp" alt="Stackly Logo">
+                </a>
+            </div>
+
+            <!-- Hero text at bottom -->
+            <div class="login-left-content">
+                <div class="login-hero-text">
+                    <span class="login-badge">JOIN OUR NETWORK</span>
+                    <h1>Begin Your <br>Financial <em>Journey</em></h1>
+                    <p>Join thousands of businesses and individuals who rely on STACKLY to manage their finances, file taxes, and grow their wealth every day.</p>
+
+                    <div class="login-features">
+                        <div class="feature-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            Free Consultation
+                        </div>
+                        <div class="feature-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Expert Advisors
+                        </div>
+                        <div class="feature-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            Live Dashboard
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE: Form -->
+        <div class="login-right">
+
+            <!-- Sticky header -->
+            <div class="login-form-header">
+                <a href="index.html" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Back to Home
+                </a>
+                <span class="welcome-text">CREATE ACCOUNT</span>
+            </div>
+
+            <div class="login-form-container">
+                <div class="login-form-titles">
+                    <h2>Sign <span>Up</span></h2>
+                    <p>Fill in your details below to get started with Stackly Accounting.</p>
+                </div>
+
+                <form class="login-form" id="signup-form">
+
+                    <!-- First Name + Last Name row -->
+                    <div class="form-two-col">
+                        <div class="form-group">
+                            <label>FIRST NAME <span class="req">*</span></label>
+                            <div class="input-with-icon">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                <input type="text" id="first-name" placeholder="John">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>LAST NAME <span class="req">*</span></label>
+                            <div class="input-with-icon">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                <input type="text" id="last-name" placeholder="Doe">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label>EMAIL ADDRESS <span class="req">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-envelope" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                            <input type="email" id="signup-email" placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <!-- Phone (optional) -->
+                    <div class="form-group">
+                        <label>PHONE NUMBER <span class="optional">(OPTIONAL)</span></label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-phone" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                            <input type="tel" id="phone" placeholder="+1 (555) 000-0000">
+                        </div>
+                    </div>
+
+                    <!-- Role -->
+                    <div class="form-group">
+                        <label>YOUR ROLE <span class="req">*</span></label>
+                        <div class="input-with-icon select-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <select id="signup-role">
+                                <option value="" disabled selected>Select your role...</option>
+                                <option value="individual">Individual / Freelancer</option>
+                                <option value="business">Business Owner</option>
+                                <option value="cfo">CFO / Finance Manager</option>
+                                <option value="accountant">Accountant</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label>PASSWORD <span class="req">*</span></label>
+                        <div class="input-with-icon">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            <input type="password" id="signup-pwd" placeholder="Min. 8 characters">
+                            <button type="button" class="password-toggle" data-target="signup-pwd">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </button>
+                        </div>
+                        <ul class="pwd-checklist" id="signup-pwd-checklist">
+                            <li id="s-len">At least 8 characters</li>
+                            <li id="s-upper">At least one uppercase letter (AZ)</li>
+                            <li id="s-lower">At least one lowercase letter (az)</li>
+                            <li id="s-num">At least one number (09)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="form-group">
+                        <label>CONFIRM PASSWORD <span class="req">*</span></label>
+                        <div class="input-with-icon">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            <input type="password" id="confirm-pwd" placeholder="Re-enter your password">
+                            <button type="button" class="password-toggle" data-target="confirm-pwd">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Terms -->
+                    <label class="remember-me" id="terms-label">
+                        <input type="checkbox" id="terms-check">
+                        <span class="checkbox-box"></span>
+                        I agree to the <a href="404.html" style="color:var(--green);font-weight:600;">Terms of Service</a> &amp; <a href="404.html" style="color:var(--green);font-weight:600;">Privacy Policy</a>
+                    </label>
+                    <span class="field-error" id="terms-error"></span>
+
+                    <button type="submit" class="login-submit-btn">
+                        CREATE ACCOUNT
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+
+                    <div class="login-footer">
+                        Already have an account? <a href="login.html">Sign In</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+    (function() {
+        // Password toggles
+        document.querySelectorAll('.password-toggle').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const id = this.getAttribute('data-target');
+                const input = document.getElementById(id);
+                if (input) input.type = input.type === 'password' ? 'text' : 'password';
+            });
+        });
+
+        // Live password checklist
+        const spwd = document.getElementById('signup-pwd');
+        const schecklist = document.getElementById('signup-pwd-checklist');
+        const schecks = { 's-len': v => v.length >= 8, 's-upper': v => /[A-Z]/.test(v), 's-lower': v => /[a-z]/.test(v), 's-num': v => /[0-9]/.test(v) };
+        spwd.addEventListener('focus', () => schecklist.classList.add('active'));
+        spwd.addEventListener('blur', () => { if (!spwd.value) schecklist.classList.remove('active'); });
+        spwd.addEventListener('input', () => {
+            const v = spwd.value;
+            Object.entries(schecks).forEach(([id, fn]) => {
+                const li = document.getElementById(id);
+                li.classList.toggle('pass', fn(v));
+                li.classList.toggle('fail', v.length > 0 && !fn(v));
+            });
+        });
+
+        // Validation
+        function setError(input, msg) {
+            const wrap = input.closest('.input-with-icon') || input.closest('.form-group');
+            let err = wrap.nextElementSibling;
+            if (!err || !err.classList.contains('field-error')) {
+                err = document.createElement('span');
+                err.className = 'field-error';
+                wrap.after(err);
+            }
+            input.classList.add('input-error'); input.classList.remove('input-valid');
+            err.textContent = msg; err.classList.add('visible');
+        }
+        function setValid(input) {
+            const wrap = input.closest('.input-with-icon') || input.closest('.form-group');
+            let err = wrap.nextElementSibling;
+            input.classList.remove('input-error'); input.classList.add('input-valid');
+            if (err && err.classList.contains('field-error')) { err.textContent = ''; err.classList.remove('visible'); }
+        }
+
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let valid = true;
+            const firstName = document.getElementById('first-name');
+            const lastName  = document.getElementById('last-name');
+            const email     = document.getElementById('signup-email');
+            const role      = document.getElementById('signup-role');
+            const pwd       = document.getElementById('signup-pwd');
+            const cpwd      = document.getElementById('confirm-pwd');
+            const terms     = document.getElementById('terms-check');
+            const termsErr  = document.getElementById('terms-error');
+
+            if (!firstName.value.trim() || firstName.value.trim().length < 2) { setError(firstName, 'First name must be at least 2 characters.'); valid = false; } else setValid(firstName);
+            if (!lastName.value.trim()  || lastName.value.trim().length < 2)  { setError(lastName,  'Last name must be at least 2 characters.'); valid = false; }  else setValid(lastName);
+            if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { setError(email, 'Please enter a valid email address.'); valid = false; } else setValid(email);
+            if (!role.value) { setError(role, 'Please select your role.'); valid = false; } else setValid(role);
+
+            const pwdVal = pwd.value;
+            if (!pwdVal) { setError(pwd, 'Password is required.'); valid = false; }
+            else if (pwdVal.length < 8) { setError(pwd, 'Password must be at least 8 characters.'); valid = false; }
+            else if (!/[A-Z]/.test(pwdVal)) { setError(pwd, 'Password must contain at least one uppercase letter.'); valid = false; }
+            else if (!/[a-z]/.test(pwdVal)) { setError(pwd, 'Password must contain at least one lowercase letter.'); valid = false; }
+            else if (!/[0-9]/.test(pwdVal)) { setError(pwd, 'Password must contain at least one number.'); valid = false; }
+            else setValid(pwd);
+
+            if (!cpwd.value) { setError(cpwd, 'Please confirm your password.'); valid = false; }
+            else if (cpwd.value !== pwdVal) { setError(cpwd, 'Passwords do not match.'); valid = false; }
+            else setValid(cpwd);
+
+            if (!terms.checked) { termsErr.textContent = '? You must agree to the Terms of Service.'; termsErr.classList.add('visible'); valid = false; }
+            else { termsErr.textContent = ''; termsErr.classList.remove('visible'); }
+
+            if (valid) {
+                const btn = this.querySelector('.login-submit-btn');
+                btn.textContent = 'Creating account...';
+                btn.disabled = true; btn.style.opacity = '0.75';
+                setTimeout(() => { btn.textContent = '?  Account Created!'; btn.style.background = 'var(--green)'; }, 1500);
+            }
+        });
+    })();
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

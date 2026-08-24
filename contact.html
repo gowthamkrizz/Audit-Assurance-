@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Stackly</title>
+    <link rel="stylesheet" href="style.css?v=2001">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="page-transitioning">
+    <header class="header light-theme">
+        <div class="logo">
+            <a href="index.html"><img src="assets/images/stackly-logo.webp" alt="Stackly Logo" style="height: 35px; width: auto; display: block;"></a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation"><span class="hamburger"></span></button>
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="mobile-auth-buttons" style="display: none; margin-top: 16px; flex-direction: column; gap: 10px;">
+                <a href="login.html" class="btn btn-login" style="width: 100%; text-align: center;">Login</a>
+                <a href="signup.html" class="btn btn-signup" style="width: 100%; text-align: center;">Signup</a>
+            </div>
+        </nav>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn btn-login">Login</a>
+            <a href="signup.html" class="btn btn-signup">Signup</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-hero-section">
+            <!-- Floating badge -->
+            <div class="contact-hero-badge">
+                <span class="badge-dot"></span>
+                <span>We reply within 24 hours</span>
+            </div>
+
+            <div class="contact-hero-inner">
+
+                <!-- LEFT: Text side -->
+                <div class="contact-hero-left">
+                    <p class="contact-hero-label">CONTACT US</p>
+                    <h1 class="contact-hero-title">Get In Touch <br>With Our <em>Experts</em></h1>
+                    <p class="contact-hero-desc">Have questions about our accounting services? Our team of certified professionals is here to help you simplify your finances and achieve long-term stability.</p>
+
+                    <div class="contact-info-list">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15z"/></svg>
+                            </div>
+                            <div>
+                                <span class="info-label">Phone</span>
+                                <span class="info-value">+1 (555) 000-0000</span>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <div>
+                                <span class="info-label">Email</span>
+                                <span class="info-value">hello@stackly.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <span class="info-label">Office</span>
+                                <span class="info-value">123 Finance Ave, New York</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Image + floating card -->
+                <div class="contact-hero-right">
+                    <div class="contact-hero-img-wrap">
+                        <img src="assets/images/contact-hero.webp" alt="Contact Hero" class="contact-hero-img">
+                        <div class="contact-hero-img-overlay"></div>
+                    </div>
+                    <!-- Floating stats card -->
+                    <div class="contact-float-card">
+                        <div class="float-stat">
+                            <span class="float-stat-num">98%</span>
+                            <span class="float-stat-label">Client Satisfaction</span>
+                        </div>
+                        <div class="float-divider"></div>
+                        <div class="float-stat">
+                            <span class="float-stat-num">24h</span>
+                            <span class="float-stat-label">Response Time</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Scroll line decoration -->
+            <div class="contact-hero-line"></div>
+        </section>
+
+    <!-- SEND US A MESSAGE SECTION -->
+    <section class="contact-msg-section">
+        <div class="contact-msg-inner">
+
+            <!-- LEFT COLUMN -->
+            <div class="contact-msg-left">
+                <h2 class="contact-msg-title">Send us a message</h2>
+                <p class="contact-msg-desc">Have questions about tax preparation, bookkeeping, or financial planning? We're here to help! Reach out to us today.</p>
+                <div class="contact-msg-img-wrap">
+                <img src="assets/images/contact-support.webp" alt="Customer Support" class="contact-msg-img">
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Green form card -->
+            <div class="contact-msg-right">
+                <div class="contact-form-card">
+                    <h3 class="form-card-title">Fill The Form Below</h3>
+                    <form class="contact-form-grid" novalidate id="contactForm">
+                        <div class="form-grid-row">
+                            <input type="text" placeholder="Your name" required>
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-grid-row">
+                            <input type="tel" placeholder="Phone" required>
+                            <input type="text" placeholder="Business Type" required>
+                        </div>
+                        <div class="form-grid-row">
+                            <input type="text" placeholder="Company" required>
+                            <input type="text" placeholder="Location" required>
+                        </div>
+                        <textarea placeholder="Type your message" rows="5" required></textarea>
+                        <label class="form-privacy">
+                            <input type="checkbox" required> I agree to the privacy policy
+                        </label>
+                        <div id="formError" style="display: none; color: #ffcccc; font-size: 0.95rem; margin-top: 5px; font-weight: 500;">Please fill out all fields and agree to the privacy policy.</div><button type="submit" class="form-submit-btn">Submit</button></form><script>document.getElementById('contactForm').addEventListener('submit', function(e) { e.preventDefault(); const errorDiv = document.getElementById('formError'); if (this.checkValidity()) { errorDiv.style.display = 'none'; window.location.href = '404.html'; } else { errorDiv.style.display = 'block'; } });</script>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONNECT WITH US SECTION -->
+    <section class="connect-section">
+        <div class="connect-inner">
+            <div class="connect-header">
+                <h2 class="connect-title">Connect with us</h2>
+                <p class="connect-desc">Looking to book a session or just want to ask a few questions, I'd be glad to connect with you.</p>
+            </div>
+            <div class="connect-cards">
+
+                <!-- Card 1: Chat to sales -->
+                <div class="connect-card">
+                    <div class="connect-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                        </svg>
+                    </div>
+                    <p class="connect-card-label">Chat to sales</p>
+                    <p class="connect-card-value">+91 74880 99999</p>
+                </div>
+
+                <!-- Card 2: Visit us -->
+                <div class="connect-card">
+                    <div class="connect-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <p class="connect-card-label">Visit us</p>
+                    <p class="connect-card-value">MMR Complex, Salem - 636 003<br>Tamil Nadu, India</p>
+                </div>
+
+                <!-- Card 3: Chat to support -->
+                <div class="connect-card">
+                    <div class="connect-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <p class="connect-card-label">Chat to support</p>
+                    <p class="connect-card-value">info@stackly.com</p>
+                </div>
+
+                <!-- Card 4: Call us -->
+                <div class="connect-card">
+                    <div class="connect-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15z"/>
+                        </svg>
+                    </div>
+                    <p class="connect-card-label">Call us</p>
+                    <p class="connect-card-value">Mon ? Sat: 8:00am ? 6:00pm</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="map-section">
+        <h2 class="map-title">Stackly map</h2>
+        <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=MMR%20Complex,%20Salem,%20Tamil%20Nadu&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-container">
+            <!-- Brand & Newsletter -->
+            <div class="footer-col brand-col">
+                <div class="logo footer-logo">
+                    <a href="index.html"><img src="assets/images/stackly-logo.webp" alt="Stackly Logo" style="height: 45px; width: auto; filter: brightness(0) invert(1); display: block;"></a>
+                </div>
+                <p class="brand-desc">Dedicated to providing high-quality accounting services to individuals and businesses. Let's grow your business together.</p>
+                <div class="social-icons brand-socials">
+                    <a href="404.html" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="404.html" aria-label="X Twitter">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16"></path><path d="M4 20L20 4"></path></svg>
+                    </a>
+                    <a href="404.html" aria-label="Dribbble">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path></svg>
+                    </a>
+                    <a href="404.html" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+
+                        <!-- Links -->
+            <div class="footer-col links-col">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+                        <!-- Contact Us -->
+                        <div class="footer-col contact-col">
+                <h4>Contact us</h4>
+                <ul class="contact-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px;">
+                    <li style="display: flex; gap: 12px; align-items: flex-start;">
+                        <svg style="min-width: 20px; width: 20px; height: 20px; color: var(--green);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span style="font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.5;">MMR Complex, Salem - 636 003<br>Tamil Nadu, India</span>
+                    </li>
+                    <li style="display: flex; gap: 12px; align-items: center;">
+                        <svg style="min-width: 20px; width: 20px; height: 20px; color: var(--green);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span style="font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.5;">+91 74880 99999</span>
+                    </li>
+                    <li style="display: flex; gap: 12px; align-items: center;">
+                        <svg style="min-width: 20px; width: 20px; height: 20px; color: var(--green);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span style="font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.5;">info@stackly.com</span>
+                    </li>
+                    <li style="display: flex; gap: 12px; align-items: center;">
+                        <svg style="min-width: 20px; width: 20px; height: 20px; color: var(--green);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <span style="font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.5;">Mon - Sat: 8:00am - 6:00pm</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Newsletter -->
+            <div class="footer-col newsletter-col">
+                <h3>Got Event in Mind?<br>Let's collaborate.</h3>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); window.location.href='404.html';">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bottom Footer Strip -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stackly Accountant Services. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Terms of Service</a>
+                <a href="404.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=50"></script>
+    <script>
+    // Contact Page Hero Animations
+    document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const contactTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+        // Badge slides down
+        contactTl.from(".contact-hero-badge", {
+            y: -30, opacity: 0, duration: 0.7
+        })
+        // Label letter-spacing reveal
+        .from(".contact-hero-label", {
+            opacity: 0, y: 15, duration: 0.6
+        }, "-=0.3")
+        // Title word-by-word reveal
+        .from(".contact-hero-title", {
+            y: 60, opacity: 0, duration: 1, ease: "power4.out"
+        }, "-=0.3")
+        // Description fade in
+        .from(".contact-hero-desc", {
+            y: 30, opacity: 0, duration: 0.8
+        }, "-=0.5")
+        // Info items stagger in
+        .from(".contact-info-item", {
+            x: -40, opacity: 0, stagger: 0.15, duration: 0.7
+        }, "-=0.4")
+        // Image wrapper curtain reveal from right
+        .fromTo(".contact-hero-img-wrap", {
+            clipPath: "inset(0% 100% 0% 0%)"
+        }, {
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 1.4, ease: "power4.inOut"
+        }, "-=1.2")
+        // Image zoom-out on reveal
+        .to(".contact-hero-img", {
+            transform: "scale(1)", duration: 2, ease: "power2.out"
+        }, "-=1.2")
+        // Float card pops up
+        .from(".contact-float-card", {
+            y: 40, opacity: 0, scale: 0.9, duration: 0.7, ease: "back.out(1.5)"
+        }, "-=0.6");
+
+        // Continuous subtle float on the stats card
+        gsap.to(".contact-float-card", {
+            y: -8,
+            duration: 2.5,
+            yoyo: true,
+            repeat: -1,
+            ease: "sine.inOut"
+        });
+
+        // Image subtle parallax on scroll
+        gsap.to(".contact-hero-img", {
+            scrollTrigger: {
+                trigger: ".contact-hero-section",
+                start: "top top",
+                end: "bottom top",
+                scrub: 1
+            },
+            y: 50,
+            ease: "none"
+        });
+
+        // --- Send us a Message section animations ---
+        gsap.from(".contact-msg-title, .contact-msg-desc", {
+            scrollTrigger: { trigger: ".contact-msg-section", start: "top 80%" },
+            y: 40, opacity: 0, stagger: 0.2, duration: 0.9, ease: "power3.out"
+        });
+
+        gsap.fromTo(".contact-msg-img-wrap",
+            { clipPath: "inset(100% 0% 0% 0%)" },
+            {
+                scrollTrigger: { trigger: ".contact-msg-section", start: "top 75%" },
+                clipPath: "inset(0% 0% 0% 0%)",
+                duration: 1.3, ease: "power4.inOut"
+            }
+        );
+
+        gsap.from(".contact-form-card", {
+            scrollTrigger: { trigger: ".contact-msg-section", start: "top 75%" },
+            x: 60, opacity: 0, duration: 1.1, ease: "power3.out"
+        });
+
+        gsap.from(".form-grid-row, .contact-form-grid textarea, .form-privacy, .form-submit-btn", {
+            scrollTrigger: { trigger: ".contact-form-card", start: "top 85%" },
+            y: 20, opacity: 0, stagger: 0.08, duration: 0.6, ease: "power2.out"
+        });
+
+        // --- Connect with us section animations ---
+        gsap.from(".connect-title, .connect-desc", {
+            scrollTrigger: { trigger: ".connect-section", start: "top 85%" },
+            y: 30, opacity: 0, stagger: 0.15, duration: 0.8, ease: "power3.out"
+        });
+
+        gsap.from(".connect-card", {
+            scrollTrigger: { trigger: ".connect-cards", start: "top 85%" },
+            y: 50, opacity: 0, stagger: 0.12, duration: 0.75, ease: "back.out(1.4)"
+        });
+    });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

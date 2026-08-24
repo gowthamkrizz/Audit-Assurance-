@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Stackly</title>
+    <link rel="stylesheet" href="style.css?v=2001">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Inline CSS for Who We Are Section to bypass any caching issues -->
+    <style>
+        .who-text-item {
+            background-color: #DFE5CE !important;
+            padding: 30px !important;
+            border-radius: 16px !important;
+            border: 1px solid #000000 !important;
+            text-align: center !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            margin-bottom: 24px !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+        .who-text-item h3 {
+            font-family: 'Playfair Display', serif !important;
+            font-size: 1.4rem !important;
+            font-weight: 600 !important;
+            color: var(--green) !important;
+            margin-bottom: 12px !important;
+        }
+        .who-text-item p {
+            font-size: 0.95rem !important;
+            color: var(--green) !important;
+            margin: 0 !important;
+            line-height: 1.6 !important;
+        }
+        .who-img-item {
+            border-radius: 16px !important;
+            overflow: hidden !important;
+            margin-bottom: 24px !important;
+            border: 1px solid #000000 !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+        .who-img-item img {
+            width: 100% !important;
+            height: 320px !important;
+            object-fit: cover !important;
+            display: block !important;
+            transition: transform 0.5s ease !important;
+        }
+        .who-img-item:last-child,
+        .who-text-item:last-child {
+            margin-bottom: 0 !important;
+        }
+        
+        /* Added Hover Animations */
+        .who-text-item:hover {
+            transform: translateY(-6px) !important;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+        }
+        .who-img-item:hover {
+            transform: translateY(-6px) !important;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
+        }
+        .who-img-item:hover img {
+            transform: scale(1.05) !important;
+        }
+                                                            /* Success Stories Styling */
+        .testimonial-card.new-style {
+            background-color: #79954A !important; /* FRONT CARD: Theme Dark Green */
+            border: none !important;
+            border-radius: 20px !important;
+            width: 370px !important;
+            min-height: 480px !important;
+            padding: 30px !important;
+            box-shadow: none !important;
+            margin: 20px auto !important;
+            transform-origin: center center !important;
+            position: relative !important;
+            z-index: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 15px !important;
+            text-align: left !important;
+            transform-style: preserve-3d !important; /* Enable 3D depth sorting */
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        }
+        .testimonial-card.new-style::before {
+            content: "" !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: #C4D78E !important; /* BACK CARD: Light Green */
+            border-radius: 20px !important;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        }
+        .testimonial-card.new-style.tilt-right {
+            transform: rotate(10.7deg) !important;
+        }
+        .testimonial-card.new-style.tilt-right::before {
+            transform: translateZ(-1px) rotate(-21.4deg) !important; /* Push behind parent */
+        }
+        .testimonial-card.new-style.tilt-left {
+            transform: rotate(-10.7deg) !important;
+        }
+        .testimonial-card.new-style.tilt-left::before {
+            transform: translateZ(-1px) rotate(21.4deg) !important; /* Push behind parent */
+        }
+        
+        /* New Unstacking Hover Animation */
+        .testimonial-card.new-style:hover {
+            transform: translateY(-10px) rotate(0deg) !important;
+            z-index: 10 !important;
+        }
+        .testimonial-card.new-style:hover::before {
+            transform: translateZ(-1px) rotate(0deg) !important;
+            background-color: #C0CBA8 !important;
+        }
+        
+        .testimonial-card.new-style .quote-icon {
+            color: #ffffff !important;
+            margin-bottom: 10px !important;
+            transition: transform 0.3s ease !important;
+        }
+        .testimonial-card.new-style:hover .quote-icon {
+            transform: scale(1.1) !important;
+        }
+        .testimonial-card.new-style .testimonial-text {
+            color: #ffffff !important;
+            font-size: 1rem !important;
+            line-height: 1.6 !important;
+            margin-bottom: 20px !important;
+            flex-grow: 1;
+            text-align: left !important; /* Enforce text alignment */
+        }
+        .testimonial-card.new-style .client-info {
+            text-align: left !important;
+        }
+        .testimonial-card.new-style .client-info h4 {
+            color: #ffffff !important;
+            text-align: left !important;
+        }
+        .testimonial-card.new-style .client-info span {
+            color: rgba(255,255,255,0.8) !important;
+            text-align: left !important;
+        }
+        .testimonial-card.new-style .testimonial-client img {
+            border: 2px solid #ffffff !important;
+        }
+    
+/* =========================================================================
+   SUCCESS STORIES RESPONSIVE MOBILE FIXES
+   ========================================================================= */
+@media (max-width: 768px) {
+    .success-stories-section {
+        padding: 50px 0 !important;
+        overflow: hidden !important;
+    }
+    
+    .success-stories-header {
+        margin-bottom: 30px !important;
+        text-align: left !important;
+    }
+    
+    .success-stories-header h2 {
+        font-size: clamp(1.75rem, 6vw, 2.2rem) !important;
+        line-height: 1.25 !important;
+    }
+    
+    .testimonials-masonry,
+    .masonry-grid.testimonials-masonry {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    .masonry-col,
+    .masonry-col.left-col,
+    .masonry-col.right-col {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        padding: 0 !important;
+    }
+    
+    .testimonial-card.new-style {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+        padding: 26px 20px !important;
+        margin: 12px 0 !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+        border-radius: 18px !important;
+    }
+    
+    .testimonial-card.new-style::before {
+        border-radius: 18px !important;
+    }
+    
+    .testimonial-card.new-style.tilt-right {
+        transform: none !important;
+    }
+    
+    .testimonial-card.new-style.tilt-right::before {
+        transform: translateZ(-1px) rotate(2deg) !important;
+    }
+    
+    .testimonial-card.new-style.tilt-left {
+        transform: none !important;
+    }
+    
+    .testimonial-card.new-style.tilt-left::before {
+        transform: translateZ(-1px) rotate(-2deg) !important;
+    }
+    
+    .testimonial-card.new-style .testimonial-text {
+        font-size: 0.88rem !important;
+        line-height: 1.65 !important;
+        color: #ffffff !important;
+        margin-bottom: 16px !important;
+    }
+    
+    .testimonial-client {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin-top: auto !important;
+    }
+    
+    .testimonial-client img {
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
+    }
+    
+    .testimonial-client .client-info h4 {
+        font-size: 0.95rem !important;
+        color: #ffffff !important;
+        margin-bottom: 2px !important;
+    }
+    
+    .testimonial-client .client-info span {
+        font-size: 0.8rem !important;
+        color: rgba(255, 255, 255, 0.75) !important;
+    }
+}
+
+</style>
+</head>
+<body class="page-transitioning">
+    <div class="mobile-overlay"></div>
+    <header class="header light-theme">
+        <div class="logo">
+            <a href="index.html"><img src="assets/images/stackly-logo.webp" alt="Stackly Logo" style="height: 35px; width: auto; display: block;"></a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-auth-buttons" style="display: none; margin-top: 16px; flex-direction: column; gap: 10px;">
+                <a href="login.html" class="btn btn-login" style="width: 100%; text-align: center;">Login</a>
+                <a href="signup.html" class="btn btn-signup" style="width: 100%; text-align: center;">Signup</a>
+            </div>
+        </nav>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn btn-login">Login</a>
+            <a href="signup.html" class="btn btn-signup">Signup</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Services Hero Section -->
+        <section class="services-hero-section">
+            <div class="container">
+                <div class="services-hero-wrapper">
+                    
+                    <!-- Top Right Stats Widget -->
+                    <div class="hero-stats-widget">
+                        <div class="stat">
+                            <h4>12k</h4>
+                            <p>Happy clients</p>
+                        </div>
+                        <div class="stat">
+                            <h4>39+</h4>
+                            <p>Team members</p>
+                        </div>
+                        <div class="stat">
+                            <h4>98%</h4>
+                            <p>Client Trust</p>
+                        </div>
+                    </div>
+
+                    <!-- Main Hero Content -->
+                    <div class="services-hero-content">
+                        <h1>OUR EXPERTISE IN ACCOUNTING<br>& FINANCE</h1>
+                        <p>Expert accounting solutions to simplify your tax,<br>bookkeeping, and financial management. Let's grow your business together!</p>
+                    </div>
+
+                    <!-- Bottom Left Client Widget -->
+                    <div class="hero-client-widget">
+                        <div class="avatar-group">
+                            <img src="assets/images/new-client1.webp" alt="Client">
+                            <img src="assets/images/new-client2.webp" alt="Client">
+                            <img src="assets/images/new-client3.webp" alt="Client">
+                            <div class="avatar-more">+</div>
+                        </div>
+                        <div class="client-text">
+                            <span>100+</span>
+                            <p>Satisfied clients</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Services Section -->
+        <section class="detailed-services-section">
+            <div class="container">
+                
+                <!-- Service 1 -->
+                <div class="service-row">
+                    <div class="service-content">
+                        <div class="micro-anim-wrapper">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#79954A" stroke-width="2">
+        <path d="M3 20L8 15L13 18L21 8" class="draw-line-anim"/>
+        <polyline points="17 8 21 8 21 12" />
+    </svg>
+</div>
+<h2>Strategy of Growth</h2>
+                        <p>Our strategic guidance helps you define clear goals and create actionable plans to achieve sustainable growth.</p>
+                        <div class="service-tags">
+                            <span>Operational Advisory</span>
+                            <span>Digital transformation</span>
+                            <span>Cost optimization</span>
+                            <span>Human Resources</span>
+                            <span>Training and Coaching</span>
+                        </div>
+                        <a href="404.html" class="btn btn-learn-more">Learn more</a>
+                    </div>
+                    <div class="service-image-group">
+                        <div class="image-backdrop" style="transform: rotate(10deg);"></div>
+                        <img src="assets/images/new-service1.webp" alt="Strategy of Growth">
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-row reverse">
+                    <div class="service-content">
+                        <div class="micro-anim-wrapper">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#79954A" stroke-width="2">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <path d="M9 14L11 16L15 11" class="draw-line-anim"/>
+    </svg>
+</div>
+<h2>Law and Tax</h2>
+                        <p>We provide expert legal and tax advice to ensure compliance, minimize risks, and optimize your tax position.</p>
+                        <div class="service-tags">
+                            <span>Corporate Law Advisory</span>
+                            <span>International Tax Planning</span>
+                            <span>Cost optimization</span>
+                            <span>Contract and Risk Management</span>
+                            <span>Audit preparation and support</span>
+                        </div>
+                        <a href="404.html" class="btn btn-learn-more">Learn more</a>
+                    </div>
+                    <div class="service-image-group">
+                        <div class="image-backdrop" style="transform: rotate(-10deg);"></div>
+                        <img src="assets/images/new-service2.webp" alt="Law and Tax">
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-row">
+                    <div class="service-content">
+                        <div class="micro-anim-wrapper">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#79954A" stroke-width="2">
+        <path d="M12 2v20 M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" class="draw-line-anim"/>
+    </svg>
+</div>
+<h2>Finance and Audit</h2>
+                        <p>Our financial and audit services provide accurate insights, enhance controls, and support informed decision-making.</p>
+                        <div class="service-tags">
+                            <span>Financial Strategy & Planning</span>
+                            <span>Internal Audit</span>
+                            <span>Capital Structuring</span>
+                            <span>Cash Flow</span>
+                            <span>Finance Process Optimization</span>
+                        </div>
+                        <a href="404.html" class="btn btn-learn-more">Learn more</a>
+                    </div>
+                    <div class="service-image-group">
+                        <div class="image-backdrop" style="transform: rotate(10deg);"></div>
+                        <img src="assets/images/new-service3.webp" alt="Finance and Audit">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Who We Are Masonry Section -->
+        <section class="who-we-are-section">
+            <div class="container">
+                <h2>Who we are</h2>
+                
+                                                                <div class="masonry-grid">
+                    <!-- Left Column -->
+                    <div class="masonry-col left-col">
+                        <div class="who-img-item">
+                            <img src="assets/images/new-who1.webp" alt="Auditing Image">
+                        </div>
+                        <div class="who-text-item">
+                            <h3>Auditing</h3>
+                            <p>Comprehensive audits to ensure financial integrity and transparency.</p>
+                        </div>
+                        <div class="who-img-item">
+                            <img src="assets/images/new-who2.webp" alt="Book keeping Image">
+                        </div>
+                        <div class="who-text-item">
+                            <h3>Book keeping</h3>
+                            <p>Accurate and organized records to keep your business running smoothly.</p>
+                        </div>
+                        <div class="who-img-item">
+                            <img src="assets/images/new-who3.webp" alt="Budgeting & Forecasting Image">
+                        </div>
+                        <div class="who-text-item">
+                            <h3>Budgeting & Forecasting</h3>
+                            <p>Plan ahead with strategic financial projections.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="masonry-col right-col">
+                        <div class="who-img-item">
+                            <img src="assets/images/new-who4.webp" alt="Compliance & Reporting Image">
+                        </div>
+                        <div class="who-text-item">
+                            <h3>Compliance & Reporting</h3>
+                            <p>Ensure legal compliance with timely financial reports.</p>
+                        </div>
+                        <div class="who-img-item">
+                            <img src="assets/images/new-who5.webp" alt="Financial Analysis Image">
+                        </div>
+                        <div class="who-text-item">
+                            <h3>Financial Analysis</h3>
+                            <p>Gain insights with in-depth financial reports and strategy.</p>
+                        </div>
+                                                                        <div class="who-img-item">
+                            <img src="assets/images/new-who6.webp" alt="Analysis and Planning Image">
+                        </div>
+                        <div class="who-text-item">
+                            <h3>Business Growth</h3>
+                            <p>Scalable financial solutions to support your company's continuous growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Insights Section -->
+
+        <!-- Success Stories Section -->
+        <section class="success-stories-section" style="position:relative; overflow:hidden;">
+        <div class="fin-bg-overlay" style="opacity: 0.05;"></div>
+            <div class="container">
+                <div class="success-stories-header" style="text-align: left; margin-bottom: 60px;">
+                    <span class="section-subtitle">Success stories</span>
+                    <h2 style="text-align: left; margin: 0;">What Our Clients<br>Say About Us</h2>
+                </div>
+                
+                <div class="masonry-grid testimonials-masonry">
+                    <!-- Left Column -->
+                    <div class="masonry-col left-col">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card new-style tilt-right">
+                            <svg class="quote-icon" width="45" height="35" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                            </svg>
+                            <p class="testimonial-text">The Level Of Professionalism And Personalized Service We Received Was Exceptional. Their Ability To Understand Our Unique Financial Needs Has Helped Us Stay Ahead Of The Competition. We Saw Considerable Growth In Our Financial Stability Within Just Six Months.</p>
+                            <div class="testimonial-client">
+                                <img src="assets/images/new-client4.webp" alt="David Smith">
+                                <div class="client-info">
+                                    <h4>David Smith</h4>
+                                    <span>CEO, Smith & Co.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-card new-style tilt-left">
+                            <svg class="quote-icon" width="45" height="35" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                            </svg>
+                            <p class="testimonial-text">Strategic Insights, We Optimized Our Cash Flow And Improved Overall Financial Efficiency. Within A Year, We Saw A Significant Boost In Revenue And Business Growth. Their Financial Expertise Transformed The Way We Approach Budgeting And Investments.</p>
+                            <div class="testimonial-client">
+                                <img src="assets/images/new-client1.webp" alt="Sarah Lewis">
+                                <div class="client-info">
+                                    <h4>Sarah Lewis</h4>
+                                    <span>Founder, Lewis Consulting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="masonry-col right-col">
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card new-style tilt-left">
+                            <svg class="quote-icon" width="45" height="35" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                            </svg>
+                            <p class="testimonial-text">Operations Have Improved Dramatically. The Team At Auditly Helped Us Streamline Our Budget And Implement Strategies That Have Led To A Significant Increase In Profits Over The Past Year. We're Excited About The Future! Thanks To Their Expert Guidance, Our Financial</p>
+                            <div class="testimonial-client">
+                                <img src="assets/images/new-client2.webp" alt="Michael Chen">
+                                <div class="client-info">
+                                    <h4>Michael Chen</h4>
+                                    <span>CFO, TechFlow Inc.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-card new-style tilt-right">
+                            <svg class="quote-icon" width="45" height="35" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                            </svg>
+                            <p class="testimonial-text">The Level Of Professionalism And Personalized Service We Received Was Exceptional. Their Ability To Understand Our Unique Financial Needs Has Helped Us Stay Ahead Of The Competition. We Saw Considerable Growth In Our Financial Stability Within Just Six Months.</p>
+                            <div class="testimonial-client">
+                                <img src="assets/images/new-client3.webp" alt="Elena Rodriguez">
+                                <div class="client-info">
+                                    <h4>Elena Rodriguez</h4>
+                                    <span>Director, Global Ventures</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section></main>
+
+    <footer class="footer-section">
+        <div class="footer-container">
+            <!-- Brand -->
+            <div class="footer-col brand-col">
+                <div class="logo footer-logo">
+                    <a href="index.html"><img src="assets/images/stackly-logo.webp" alt="Stackly Logo" style="height: 45px; width: auto; filter: brightness(0) invert(1); display: block;"></a>
+                </div>
+                <p class="brand-desc">Dedicated to providing high-quality accounting services to individuals and businesses. Let's grow your business together.</p>
+                <div class="social-icons brand-socials">
+                    <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+                        <!-- Links -->
+            <div class="footer-col links-col">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+                        <!-- Contact Us -->
+                        <div class="footer-col contact-col">
+                <h4>Contact us</h4>
+                <ul class="contact-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px;">
+                    <li style="display: flex; gap: 12px; align-items: flex-start;">
+                        <i class="fa-solid fa-location-dot" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                        <span style="font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.5;">MMR Complex, Salem - 636 003<br>Tamil Nadu, India</span>
+                    </li>
+                    <li style="display: flex; gap: 12px; align-items: center;">
+                        <i class="fa-solid fa-phone" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                        <span style="font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.5;">+91 74880 99999</span>
+                    </li>
+                    <li style="display: flex; gap: 12px; align-items: center;">
+                        <i class="fa-solid fa-envelope" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                        <span style="font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.5;">info@stackly.com</span>
+                    </li>
+                    <li style="display: flex; gap: 12px; align-items: center;">
+                        <i class="fa-solid fa-clock" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                        <span style="font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.5;">Mon - Sat: 8:00am - 6:00pm</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Newsletter -->
+            <div class="footer-col newsletter-col">
+                <h3>Got Event in Mind?<br>Let's collaborate.</h3>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); window.location.href='404.html';">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stackly Accountant Services. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Terms of Service</a>
+                <a href="404.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js?v=50"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

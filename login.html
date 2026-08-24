@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Stackly Accounting</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2001">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="login-page">
+    <div class="mobile-overlay"></div>
+    <div class="login-split-container">
+        
+        <!-- LEFT SIDE: Image & Content -->
+        <div class="login-left">
+            <img src="assets/images/about-img.webp" alt="Stackly Accounting" class="login-bg-img">
+            <div class="login-overlay"></div>
+            
+            <!-- Logo pinned to top -->
+            <div class="login-logo-wrap">
+                <a href="index.html" class="login-logo">
+                    <img src="assets/images/stackly-logo.webp" alt="Stackly Logo">
+                </a>
+            </div>
+
+            <!-- Hero text at bottom -->
+            <div class="login-left-content">
+                <div class="login-hero-text">
+                    <span class="login-badge">WELCOME BACK</span>
+                    <h1>Unlock Your <br>Financial <em>Clarity</em></h1>
+                    <p>Access your STACKLY account to manage your financial portfolio, track business expenses, explore tax strategies, and connect with our expert advisors.</p>
+                    
+                    <div class="login-features">
+                        <div class="feature-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            Secure Access
+                        </div>
+                        <div class="feature-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Expert Advisors
+                        </div>
+                        <div class="feature-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                            Data Analytics
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE: Form -->
+        <div class="login-right">
+
+            <!-- Sticky header: Back to Home + WELCOME BACK -->
+            <div class="login-form-header">
+                <a href="index.html" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Back to Home
+                </a>
+                <span class="welcome-text">WELCOME BACK</span>
+            </div>
+
+            <div class="login-form-container">
+                <div class="login-form-titles">
+                    <h2>Sign <span>In</span></h2>
+                    <p>Enter your credentials below to access your financial dashboard.</p>
+                </div>
+
+                <form class="login-form">
+                    <div class="form-group">
+                        <label>USERNAME</label>
+                        <div class="input-with-icon">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <input type="text" placeholder="Enter your username">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>LOGIN AS</label>
+                        <div class="input-with-icon select-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <select>
+                                <option value="" disabled selected>Select your role...</option>
+                                <option value="client">Client</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                            <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>EMAIL ADDRESS</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-envelope" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                            <input type="email" placeholder="you@company.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>PASSWORD</label>
+                        <div class="input-with-icon">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            <input type="password" placeholder="Min. 8 characters" id="pwd-input">
+                            <button type="button" class="password-toggle">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </button>
+                        </div>
+                        <!-- Live password strength checklist -->
+                        <ul class="pwd-checklist" id="pwd-checklist">
+                            <li id="pwd-len">At least 8 characters</li>
+                            <li id="pwd-upper">At least one uppercase letter (AÃ¢â‚¬â€œZ)</li>
+                            <li id="pwd-lower">At least one lowercase letter (aÃ¢â‚¬â€œz)</li>
+                            <li id="pwd-num">At least one number (0Ã¢â‚¬â€œ9)</li>
+                        </ul>
+                    </div>
+
+                    <div class="form-actions-row">
+                        <label class="remember-me">
+                            <input type="checkbox">
+                            <span class="checkbox-box"></span>
+                            Remember me
+                        </label>
+                        <a href="404.html" class="forgot-pwd">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="login-submit-btn">
+                        SIGN IN
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+
+                    <div class="login-footer">
+                        Don't have an account? <a href="signup.html">Create one free</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+    (function() {
+        const form = document.querySelector('.login-form');
+        const fields = {
+            username: {
+                el: form.querySelector('input[type="text"]'),
+                rules: [
+                    { test: v => v.trim().length > 0, msg: 'Username is required.' },
+                    { test: v => v.trim().length >= 3, msg: 'Username must be at least 3 characters.' }
+                ]
+            },
+            role: {
+                el: form.querySelector('select'),
+                rules: [
+                    { test: v => v !== '', msg: 'Please select your role.' }
+                ]
+            },
+            email: {
+                el: form.querySelector('input[type="email"]'),
+                rules: [
+                    { test: v => v.trim().length > 0, msg: 'Email address is required.' },
+                    { test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), msg: 'Please enter a valid email address.' }
+                ]
+            },
+            password: {
+                el: form.querySelector('input[type="password"]'),
+                rules: [
+                    { test: v => v.length > 0,          msg: 'Password is required.' },
+                    { test: v => v.length >= 8,          msg: 'Password must be at least 8 characters.' },
+                    { test: v => /[A-Z]/.test(v),        msg: 'Password must contain at least one uppercase letter (AÃ¢â‚¬â€œZ).' },
+                    { test: v => /[a-z]/.test(v),        msg: 'Password must contain at least one lowercase letter (aÃ¢â‚¬â€œz).' },
+                    { test: v => /[0-9]/.test(v),        msg: 'Password must contain at least one number (0Ã¢â‚¬â€œ9).' }
+                ]
+            }
+        };
+
+        // Inject error message spans after each input wrapper
+        Object.values(fields).forEach(({ el }) => {
+            const wrap = el.closest('.input-with-icon') || el.closest('.form-group');
+            if (!wrap.querySelector('.field-error')) {
+                const err = document.createElement('span');
+                err.className = 'field-error';
+                wrap.after(err);
+            }
+        });
+
+        function getErrorEl(fieldEl) {
+            const wrap = fieldEl.closest('.input-with-icon') || fieldEl.closest('.form-group');
+            return wrap.nextElementSibling;
+        }
+
+        function validateField(key) {
+            const { el, rules } = fields[key];
+            const value = el.value;
+            const errorEl = getErrorEl(el);
+            const wrap = el.closest('.input-with-icon') || el.closest('.form-group');
+            const inputEl = wrap.querySelector('input, select');
+
+            for (const rule of rules) {
+                if (!rule.test(value)) {
+                    errorEl.textContent = rule.msg;
+                    errorEl.classList.add('visible');
+                    inputEl.classList.add('input-error');
+                    inputEl.classList.remove('input-valid');
+                    return false;
+                }
+            }
+            errorEl.textContent = '';
+            errorEl.classList.remove('visible');
+            inputEl.classList.remove('input-error');
+            inputEl.classList.add('input-valid');
+            return true;
+        }
+
+        // Real-time validation on blur
+        Object.keys(fields).forEach(key => {
+            const { el } = fields[key];
+            el.addEventListener('blur', () => validateField(key));
+            el.addEventListener('input', () => {
+                if (el.classList.contains('input-error')) validateField(key);
+            });
+        });
+
+                // Remove remember me error on change
+        const rememberCheckbox = form.querySelector('.remember-me input[type="checkbox"]');
+        const rememberLabel = form.querySelector('.remember-me');
+        rememberCheckbox.addEventListener('change', () => {
+            if (rememberCheckbox.checked) {
+                const err = form.querySelector('.remember-me-error');
+                if (err) err.remove();
+                const checkboxBox = form.querySelector('.checkbox-box');
+                if(checkboxBox) checkboxBox.style.borderColor = '';
+                rememberLabel.style.color = '';
+            }
+        });
+
+        // Form submit
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const allValid = Object.keys(fields).map(k => validateField(k)).every(Boolean);
+            
+            const rememberCheckbox = form.querySelector('.remember-me input[type="checkbox"]');
+            const rememberLabel = form.querySelector('.remember-me');
+
+            if (!allValid) return;
+
+            let rememberError = form.querySelector('.remember-me-error');
+            if (!rememberCheckbox.checked) {
+                if (!rememberError) {
+                    rememberError = document.createElement('div');
+                    rememberError.className = 'field-error remember-me-error visible';
+                    rememberError.style.display = 'block';
+                    rememberError.style.marginTop = '-10px';
+                    rememberError.style.marginBottom = '20px';
+                    rememberError.style.fontSize = '0.85rem';
+                    rememberError.style.color = '#ef4444'; // Red color
+                    form.querySelector('.form-actions-row').after(rememberError);
+                }
+                rememberError.textContent = 'Please check the "Remember me" box to sign in.';
+                
+                // Add a red border to the custom checkbox box
+                const checkboxBox = form.querySelector('.checkbox-box');
+                if(checkboxBox) checkboxBox.style.borderColor = '#ef4444';
+                rememberLabel.style.color = '#ef4444';
+                
+                return;
+            } else {
+                if (rememberError) {
+                    rememberError.remove();
+                }
+                const checkboxBox = form.querySelector('.checkbox-box');
+                if(checkboxBox) checkboxBox.style.borderColor = '';
+                rememberLabel.style.color = '';
+            }
+
+            if (allValid) {
+                const btn = form.querySelector('.login-submit-btn');
+                btn.textContent = 'Signing in...';
+                btn.disabled = true;
+                btn.style.opacity = '0.75';
+                
+                const role = fields.role.el.value;
+                const username = fields.username.el.value;
+                const email = fields.email.el.value;
+
+                // Simulate login — redirect to dashboard
+                setTimeout(() => {
+                    btn.innerHTML = '&#10003; Signed In!';
+                    btn.style.background = 'var(--green)';
+                    
+                    localStorage.setItem('dashboardName', username);
+                    localStorage.setItem('dashboardEmail', email);
+                    
+                    setTimeout(() => {
+                        if (role === 'admin') {
+                            window.location.href = 'admin-dashboard.html';
+                        } else {
+                            window.location.href = 'client-dashboard.html';
+                        }
+                    }, 500);
+                }, 1000);
+            }
+        });
+        // Live password checklist
+        const pwdInput = document.getElementById('pwd-input');
+        const checklist = document.getElementById('pwd-checklist');
+        const checks = {
+            'pwd-len':   v => v.length >= 8,
+            'pwd-upper': v => /[A-Z]/.test(v),
+            'pwd-lower': v => /[a-z]/.test(v),
+            'pwd-num':   v => /[0-9]/.test(v)
+        };
+
+        if (pwdInput && checklist) {
+            pwdInput.addEventListener('focus', () => checklist.classList.add('active'));
+            pwdInput.addEventListener('blur',  () => { if (!pwdInput.value) checklist.classList.remove('active'); });
+            pwdInput.addEventListener('input', () => {
+                const v = pwdInput.value;
+                Object.entries(checks).forEach(([id, fn]) => {
+                    const li = document.getElementById(id);
+                    li.classList.toggle('pass', fn(v));
+                    li.classList.toggle('fail', v.length > 0 && !fn(v));
+                });
+            });
+        }
+
+        // Password toggle visibility
+        document.querySelector('.password-toggle').addEventListener('click', function() {
+            const input = document.getElementById('pwd-input');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        });
+    })();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

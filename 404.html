@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Stackly Accounting</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2001">
+    <style>
+        .error-page-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f9fafb;
+            text-align: center;
+            padding: 20px;
+        }
+        .error-content {
+            max-width: 600px;
+            background: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            animation: fadeUp 0.6s ease-out forwards;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .error-code {
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            line-height: 1;
+            color: var(--green, #79954a);
+            margin: 0 0 20px 0;
+            font-weight: 700;
+        }
+        .error-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            color: #1f2937;
+            margin: 0 0 16px 0;
+            font-weight: 600;
+        }
+        .error-desc {
+            color: #6b7280;
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .error-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border: 2px solid var(--green, #79954a);
+            color: var(--green, #79954a);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background: var(--green, #79954a);
+            color: white;
+        }
+        .btn-primary-error {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            background: var(--green, #79954a);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .btn-primary-error:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-overlay"></div>
+    <div class="error-page-wrapper">
+        <div class="error-content">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Page Not Found</h2>
+            <p class="error-desc">Oops! The page you're looking for doesn't seem to exist. It might have been moved or deleted, or perhaps the URL is incorrect.</p>
+            <div class="error-actions">
+                <a href="index.html" class="btn-primary-error">Back to Home</a>
+                <a href="javascript:history.back()" class="btn-outline">Back to Previous</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

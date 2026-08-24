@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Accountant Services</title>
+    <link rel="stylesheet" href="style.css?v=2001">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  .btn-explore-custom { display: inline-block; padding: 13px 36px; background-color: var(--green); border: 2px solid var(--green); color: var(--white); border-radius: 50px; font-size: 0.95rem; font-weight: 500; transition: all 0.3s ease; margin-top: 20px; text-decoration: none; z-index: 50; position: relative; }
+  .btn-explore-custom:hover { background-color: #5e7438; border-color: #5e7438; color: var(--white) !important; transform: translateY(-2px); }
+</style>
+</head>
+<body class="page-transitioning">
+    <div class="mobile-overlay"></div>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="assets/images/stackly-logo.webp" alt="Stackly Logo" style="height: 35px; width: auto; display: block;"></a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-auth-buttons" style="display: none; margin-top: 16px; flex-direction: column; gap: 10px;">
+                <a href="login.html" class="btn btn-login" style="width: 100%; text-align: center;">Login</a>
+                <a href="signup.html" class="btn btn-signup" style="width: 100%; text-align: center;">Signup</a>
+            </div>
+        </nav>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn btn-login">Login</a>
+            <a href="signup.html" class="btn btn-signup">Signup</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Blog Hero Section -->
+        <section class="blog-hero-section">
+            <div class="container blog-hero-container">
+
+                                <!-- Hero Card -->
+                <div class="learn-more-wrapper">
+                    <a href="404.html" class="learn-more-badge">Learn<br>More</a>
+                </div>
+                <div class="blog-hero-card">
+                    <div class="blog-hero-cutout"></div>
+                    <div class="blog-hero-overlay"></div>
+                    <div class="blog-hero-wrapper">
+                        <div class="blog-hero-content">
+                            <h1>STRATEGIES FOR FINANCIAL SUCCESS</h1>
+                            <p>At Auditry, we provide expert tax, bookkeeping, and financial solutions tailored to your needs. With years of experience, we help businesses stay compliant, maximize savings, and grow confidently.</p>
+                              
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+        <!-- Popular Blogs Section -->
+        <section class="popular-blogs-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 40px; font-size: 2.2rem; font-family: 'Playfair Display', serif; color: var(--green);">Popular Blogs</h2>
+                
+                <div class="popular-blogs-masonry">
+                    <!-- Left Column -->
+                    <div class="popular-blogs-col">
+                        
+                        <!-- Card 1 -->
+                        <div class="blog-card" style="break-inside: avoid; margin-bottom: 0;">
+                            <div class="blog-image" style="height: auto; aspect-ratio: 16/10;">
+                                <img src="assets/images/pop-blog1.webp" alt="Tax Planning" style="height: 100%; width: 100%; object-fit: cover;">
+                            </div>
+                            <div class="blog-content">
+                                <span class="blog-category">Tax</span>
+                                <h3>Essential Tax Planning Tips For Small Businesses</h3>
+                                <p class="blog-excerpt">Learn how to optimize your tax strategy and minimize liabilities before the financial year ends with these proven techniques.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="blog-card" style="break-inside: avoid; margin-bottom: 0;">
+                            <div class="blog-image" style="height: auto; aspect-ratio: 4/3;">
+                                <img src="assets/images/pop-blog3.webp" alt="Financial Auditing" style="height: 100%; width: 100%; object-fit: cover;">
+                            </div>
+                            <div class="blog-content">
+                                <span class="blog-category">Auditing</span>
+                                <h3>The Importance Of Financial Auditing For Companies</h3>
+                                <p class="blog-excerpt">Understand why regular financial audits are crucial for transparency, compliance, and building investor confidence in your company.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="blog-card" style="break-inside: avoid; margin-bottom: 0;">
+                            <div class="blog-image" style="height: auto; aspect-ratio: 16/10;">
+                                <img src="assets/images/pop-blog5.webp" alt="Budgeting Strategies" style="height: 100%; width: 100%; object-fit: cover;">
+                            </div>
+                            <div class="blog-content">
+                                <span class="blog-category">Financial Tips</span>
+                                <h3>Effective Budgeting Strategies For Business Growth</h3>
+                                <p class="blog-excerpt">Master the art of budgeting with strategies designed to maximize cash flow and propel your business towards sustainable growth.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column -->
+                    <div style="display: flex; flex-direction: column; gap: 32px; flex: 1; margin-top: 40px;">
+                        
+                        <!-- Card 2 -->
+                        <div class="blog-card" style="break-inside: avoid; margin-bottom: 0;">
+                            <div class="blog-image" style="height: auto; aspect-ratio: 16/10;">
+                                <img src="assets/images/pop-blog2.webp" alt="Finances Organized" style="height: 100%; width: 100%; object-fit: cover;">
+                            </div>
+                            <div class="blog-content">
+                                <span class="blog-category">Book Keeping</span>
+                                <h3>How To Keep Your Business Finances Organized</h3>
+                                <p class="blog-excerpt">Discover the best practices for maintaining accurate financial records to ensure your business operations run smoothly and efficiently.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="blog-card" style="break-inside: avoid; margin-bottom: 0;">
+                            <div class="blog-image" style="height: auto; aspect-ratio: 16/10;">
+                                <img src="assets/images/pop-blog4.webp" alt="Bookkeeping Mistakes" style="height: 100%; width: 100%; object-fit: cover;">
+                            </div>
+                            <div class="blog-content">
+                                <span class="blog-category">Book Keeping</span>
+                                <h3>Common Book Keeping Mistakes And How To Avoid Them</h3>
+                                <p class="blog-excerpt">Avoid costly errors by identifying and fixing the most common bookkeeping mistakes that plague growing businesses.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="blog-card" style="break-inside: avoid; margin-bottom: 0;">
+                            <div class="blog-image" style="height: auto; aspect-ratio: 4/3;">
+                                <img src="assets/images/pop-blog6.webp" alt="Financial Statements" style="height: 100%; width: 100%; object-fit: cover;">
+                            </div>
+                            <div class="blog-content">
+                                <span class="blog-category">Auditing</span>
+                                <h3>Understanding Financial Statements For Better Decision Making</h3>
+                                <p class="blog-excerpt">A comprehensive guide to preparing your business for an external audit, ensuring a smooth and stress-free evaluation process.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Insights Staggered Section -->
+        <section class="insights-section" style="padding: 40px 0 70px;">
+            <div class="container">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; color: var(--green);">Latest Insights, Financial Tips &<br>Tricks</h2>
+                
+                <div class="insights-staggered-grid">
+                    <!-- Column 1 -->
+                    <div class="stagger-col left-col">
+                        <div class="stagger-card">
+                            <div class="stagger-img">
+                                <img src="assets/images/blog-main1.webp" alt="Budgeting">
+                            </div>
+                            <h3>The Importance Of Budgeting For Small Businesses</h3>
+                            <div class="stagger-meta">
+                                <div class="meta-info">
+                                    <span>5 Min</span>
+                                    <span>Guide</span>
+                                </div>
+                                <div class="meta-icon">
+                                    <span>&rarr;</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stagger-card">
+                            <div class="stagger-img">
+                                <img src="assets/images/blog-main2.webp" alt="Valuation">
+                            </div>
+                            <h3>Understanding Business Valuation: What You Need To Know</h3>
+                            <div class="stagger-meta">
+                                <div class="meta-info">
+                                    <span>5 Min</span>
+                                    <span>Business</span>
+                                </div>
+                                <div class="meta-icon">
+                                    <span>&rarr;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="stagger-col mid-col">
+                        <div class="stagger-card">
+                            <div class="stagger-img">
+                                <img src="assets/images/blog-main3.webp" alt="Debit or Credit">
+                            </div>
+                            <h3>Which Card Is Better To Have - Debit Or Credit?</h3>
+                            <div class="stagger-meta">
+                                <div class="meta-info">
+                                    <span>5 Min</span>
+                                    <span>News</span>
+                                </div>
+                                <div class="meta-icon">
+                                    <span>&rarr;</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stagger-card">
+                            <div class="stagger-img">
+                                <img src="assets/images/blog-main4.webp" alt="Coding Languages">
+                            </div>
+                            <h3>10 Best Code Languages For Begginers</h3>
+                            <div class="stagger-meta">
+                                <div class="meta-info">
+                                    <span>5 Min</span>
+                                    <span>Business</span>
+                                </div>
+                                <div class="meta-icon">
+                                    <span>&rarr;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="stagger-col right-col">
+                        <div class="stagger-card">
+                            <div class="stagger-img">
+                                <img src="assets/images/blog-main5.webp" alt="Mobile Design">
+                            </div>
+                            <h3>Why You Should Have Adaptive Mobile Design And How It Help</h3>
+                            <div class="stagger-meta">
+                                <div class="meta-info">
+                                    <span>5 Min</span>
+                                    <span>Guide</span>
+                                </div>
+                                <div class="meta-icon">
+                                    <span>&rarr;</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stagger-card">
+                            <div class="stagger-img">
+                                <img src="assets/images/blog-main6.webp" alt="In-House Accountant">
+                            </div>
+                            <h3>The Pros And Cons Of Hiring An In-House Accountant</h3>
+                            <div class="stagger-meta">
+                                <div class="meta-info">
+                                    <span>5 Min</span>
+                                    <span>News</span>
+                                </div>
+                                <div class="meta-icon">
+                                    <span>&rarr;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Blog CTA Section -->
+        <section class="blog-cta-section">
+            <div class="container" style="text-align: center;">
+                <h2>Take Control of Your Finances Today!</h2>
+                <p>Expert accounting solutions to simplify your tax, bookkeeping,<br>and financial management. Let's grow your business together!</p>
+                <a href="404.html" class="btn-explore-custom">Explore now</a>
+            </div>
+        </section></main>
+
+    <footer class="footer-section">
+        <div class="footer-container">
+            <!-- Brand & Newsletter -->
+            <div class="footer-col brand-col">
+                <div class="logo footer-logo">
+                    <a href="index.html"><img src="assets/images/stackly-logo.webp" alt="Stackly Logo" style="height: 45px; width: auto; filter: brightness(0) invert(1); display: block;"></a>
+                </div>
+                <p class="brand-desc">Dedicated to providing high-quality accounting services to individuals and businesses. Let's grow your business together.</p>
+                <div class="social-icons brand-socials">
+                    <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+                        <!-- Links -->
+            <div class="footer-col links-col">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+                        <!-- Contact Us -->
+                        <div class="footer-col contact-col">
+                <h4>Contact us</h4>
+                <ul class="contact-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px;">
+                    <li style="display: flex; gap: 12px; align-items: flex-start;">
+                        <i class="fa-solid fa-location-dot" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                        <span style="font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.5;">MMR Complex, Salem - 636 003<br>Tamil Nadu, India</span>
+                    </li>
+                    <li style="display: flex; gap: 12px; align-items: center;">
+                        <i class="fa-solid fa-phone" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                        <span style="font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.5;">+91 74880 99999</span>
+                    </li>
+                    <li style="display: flex; gap: 12px; align-items: center;">
+                        <i class="fa-solid fa-envelope" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                        <span style="font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.5;">info@stackly.com</span>
+                    </li>
+                    <li style="display: flex; gap: 12px; align-items: center;">
+                        <i class="fa-solid fa-clock" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                        <span style="font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.5;">Mon - Sat: 8:00am - 6:00pm</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Newsletter -->
+            <div class="footer-col newsletter-col">
+                <h3>Got Event in Mind?<br>Let's collaborate.</h3>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); window.location.href='404.html';">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bottom Footer Strip -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stackly Accountant Services. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Terms of Service</a>
+                <a href="404.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js?v=50"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
