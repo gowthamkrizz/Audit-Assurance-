@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stackly - Accountant Services</title>
-    <link rel="stylesheet" href="style.css?v=2001">
+    <link rel="stylesheet" href="style.css?v=3.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
@@ -12,6 +12,36 @@
   .btn-explore-custom { display: inline-block; padding: 13px 36px; background-color: var(--green); border: 2px solid var(--green); color: var(--white); border-radius: 50px; font-size: 0.95rem; font-weight: 500; transition: all 0.3s ease; margin-top: 20px; text-decoration: none; z-index: 50; position: relative; }
   .btn-explore-custom:hover { background-color: #5e7438; border-color: #5e7438; color: var(--white) !important; transform: translateY(-2px); }
 </style>
+
+    <style>
+        /* Single Clean Side Scrollbar */
+        html {
+            overflow-y: scroll !important;
+            overflow-x: hidden !important;
+            scrollbar-width: thin !important;
+            scrollbar-color: #79954A #f1f5f9 !important;
+        }
+        body {
+            overflow-x: clip !important;
+            overflow-y: visible !important;
+        }
+        ::-webkit-scrollbar {
+            width: 7px !important;
+            height: 7px !important;
+            display: block !important;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9 !important;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #79954A !important;
+            border-radius: 4px !important;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5e7438 !important;
+        }
+    </style>
+
 </head>
 <body class="page-transitioning">
     <div class="mobile-overlay"></div>

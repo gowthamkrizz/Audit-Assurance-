@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Stackly</title>
-    <link rel="stylesheet" href="style.css?v=2001">
+    <link rel="stylesheet" href="style.css?v=3.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* Single Clean Side Scrollbar */
+        html {
+            overflow-y: scroll !important;
+            overflow-x: hidden !important;
+            scrollbar-width: thin !important;
+            scrollbar-color: #79954A #f1f5f9 !important;
+        }
+        body {
+            overflow-x: clip !important;
+            overflow-y: visible !important;
+        }
+        ::-webkit-scrollbar {
+            width: 7px !important;
+            height: 7px !important;
+            display: block !important;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9 !important;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #79954A !important;
+            border-radius: 4px !important;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5e7438 !important;
+        }
+    </style>
+
 </head>
 <body class="page-transitioning">
     <header class="header light-theme">

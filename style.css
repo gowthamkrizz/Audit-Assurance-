@@ -1,3 +1,6 @@
+
+
+
 /* ==========================================================================
    STACKLY – AUDIT & ASSURANCE | COMPLETE STYLESHEET
    Covers: index.html · about.html · services.html · blog.html · contact.html
@@ -5147,4 +5150,40 @@ body::-webkit-scrollbar {
 * {
     scrollbar-width: none !important;
     -ms-overflow-style: none !important;
+}
+
+
+/* =========================================================================
+   SINGLE CLEAN MODERN SIDE SCROLLBAR (ONE ONLY)
+   ========================================================================= */
+html {
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: #79954A #f1f5f9 !important;
+}
+
+body {
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+}
+
+/* Webkit (Chrome, Edge, Safari) Custom Single Scrollbar */
+::-webkit-scrollbar {
+    width: 7px !important;
+    height: 7px !important;
+    display: block !important;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #79954A !important;
+    border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5e7438 !important;
 }

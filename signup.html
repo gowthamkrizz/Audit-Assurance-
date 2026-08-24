@@ -8,8 +8,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2001">
+    <link rel="stylesheet" href="style.css?v=3.0">
     <link rel="stylesheet" href="login.css">
+
+    <style>
+        /* Single Clean Side Scrollbar */
+        html {
+            overflow-y: scroll !important;
+            overflow-x: hidden !important;
+            scrollbar-width: thin !important;
+            scrollbar-color: #79954A #f1f5f9 !important;
+        }
+        body {
+            overflow-x: clip !important;
+            overflow-y: visible !important;
+        }
+        ::-webkit-scrollbar {
+            width: 7px !important;
+            height: 7px !important;
+            display: block !important;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9 !important;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #79954A !important;
+            border-radius: 4px !important;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5e7438 !important;
+        }
+    </style>
+
 </head>
 <body class="login-page">
     <div class="mobile-overlay"></div>
