@@ -140,7 +140,9 @@
 
     <script>
         function goBack() {
-            if (window.history.length > 1 && document.referrer) {
+            if (document.referrer && document.referrer !== window.location.href && !document.referrer.endsWith('404.html')) {
+                window.location.href = document.referrer;
+            } else if (window.history.length > 1) {
                 window.history.back();
             } else {
                 window.location.href = 'index.html';

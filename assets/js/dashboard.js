@@ -18,61 +18,85 @@ function toggleSidebar() {
     }
 }
 
+function activateSection(targetId) {
+    if (!targetId) return;
+    const targetSection = document.getElementById(targetId);
+    if (!targetSection) return;
+
+    // Update nav links
+    const navLinks = document.querySelectorAll('.dash-nav-link:not(.logout-link)');
+    navLinks.forEach(l => {
+        if (l.getAttribute('data-target') === targetId) {
+            l.classList.add('active');
+        } else {
+            l.classList.remove('active');
+        }
+    });
+
+    // Hide all sections and show target
+    document.querySelectorAll('.dash-section').forEach(section => {
+        section.style.display = 'none';
+        section.classList.remove('active-section');
+        const bars = section.querySelectorAll('.bar-fill');
+        bars.forEach(bar => { bar.style.height = '0'; });
+    });
+
+    targetSection.style.display = 'block';
+    targetSection.style.opacity = 1;
+    targetSection.classList.add('active-section');
+
+    // Save active section in sessionStorage
+    sessionStorage.setItem('activeDashSection', targetId);
+
+    // Trigger chart animations if present
+    setTimeout(() => {
+        const bars = targetSection.querySelectorAll('.bar-fill');
+        bars.forEach(bar => {
+            const targetHeight = bar.getAttribute('data-height');
+            if (targetHeight) {
+                bar.style.height = targetHeight;
+            }
+        });
+    }, 300);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Sidebar nav link active state toggling
     const navLinks = document.querySelectorAll('.dash-nav-link:not(.logout-link)');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            navLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-
-            // Handle SPA section switching
             const targetId = this.getAttribute('data-target');
             if (targetId) {
-                document.querySelectorAll('.dash-section').forEach(section => {
-                    section.style.display = 'none';
-                    section.classList.remove('active-section');
-                    // Reset bar charts if any
-                    const bars = section.querySelectorAll('.bar-fill');
-                    bars.forEach(bar => { bar.style.height = '0'; });
-                });
-                
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.style.display = 'block';
-                    targetSection.style.opacity = 0;
-                    
-                    // Re-trigger CSS animations by forcing a reflow
-                    const animatedElements = targetSection.querySelectorAll('.animate-fade-up');
-                    animatedElements.forEach(el => {
-                        el.style.animation = 'none';
-                        void el.offsetWidth; // trigger reflow
-                        el.style.animation = ''; 
-                    });
+                activateSection(targetId);
 
-                    setTimeout(() => targetSection.style.opacity = 1, 10);
-                    targetSection.classList.add('active-section');
-                    
-                    // Re-trigger bar chart animations in this section
-                    setTimeout(() => {
-                        const bars = targetSection.querySelectorAll('.bar-fill');
-                        bars.forEach(bar => {
-                            const targetHeight = bar.getAttribute('data-height');
-                            if (targetHeight) {
-                                bar.style.height = targetHeight;
-                            }
-                        });
-                    }, 300);
-                }
-                
                 // On mobile, close sidebar after clicking a link
                 if (window.innerWidth <= 768) {
-                    document.getElementById('dashSidebar').classList.remove('mobile-open');
-                    document.body.style.overflow = '';
-                    document.body.classList.remove('menu-open');
+                    const sidebar = document.getElementById('dashSidebar');
+                    if (sidebar) {
+                        sidebar.classList.remove('mobile-open');
+                        document.body.style.overflow = '';
+                        document.body.classList.remove('menu-open');
+                    }
                 }
             }
+        });
+    });
+
+    // Restore previous active section if returning from 404 or page reload
+    function restoreActiveSection() {
+        const stored = sessionStorage.getItem('activeDashSection');
+        if (stored && document.getElementById(stored)) {
+            activateSection(stored);
+        }
+    }
+    restoreActiveSection();
+    window.addEventListener('pageshow', restoreActiveSection);
+
+    // Clear active section on logout
+    document.querySelectorAll('.logout-link').forEach(link => {
+        link.addEventListener('click', () => {
+            sessionStorage.removeItem('activeDashSection');
         });
     });
 
@@ -89,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    
     // Profile Dropdown click support for mobile/touch
     const profileWidget = document.querySelector('.dropdown-container');
     if (profileWidget) {
@@ -174,6 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     msg.textContent = 'Please fill in all details before saving changes.';
                     saveBtn.after(msg);
                 } else {
+                    sessionStorage.setItem('activeDashSection', 'section-settings');
                     window.location.href = '404.html';
                 }
             });
@@ -220,5 +244,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-
