@@ -1,4 +1,4 @@
-﻿
+
 
 
 /* ==========================================================================
@@ -1113,7 +1113,7 @@ footer.footer .link-group ul li a:hover {
 /* =========================================================================
    15.  ABOUT PAGE â€“ HERO SECTION
    ========================================================================= */
-.about-hero-section { padding: 180px 0 100px; background: linear-gradient(to right, rgba(121, 149, 74, 0.95) 0%, rgba(121, 149, 74, 0.75) 45%, rgba(0, 0, 0, 0.2) 100%), url('assets/images/about-bg-img.webp'); background-size: cover; background-position: center; position: relative; }
+.about-hero-section { padding: 180px 0 100px; background: linear-gradient(to right, rgba(121, 149, 74, 0.95) 0%, rgba(121, 149, 74, 0.75) 45%, rgba(0, 0, 0, 0.2) 100%), url('assets/images/about-bg-img.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; }
 
 .about-hero-container {
     position: relative;
