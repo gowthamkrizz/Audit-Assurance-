@@ -1,3 +1,8 @@
+try {
+    if (!window.location.href.includes('404.html')) {
+        sessionStorage.setItem('stackly_last_page', window.location.href);
+    }
+} catch(e) {}
 // Immediate page visibility guarantee
 (function() {
     function ensureVisible() {

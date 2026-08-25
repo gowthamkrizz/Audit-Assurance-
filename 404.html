@@ -70,6 +70,9 @@
             border-radius: 4px;
             font-weight: 500;
             cursor: pointer;
+            background: transparent;
+            font-size: 1rem;
+            font-family: inherit;
             transition: all 0.3s ease;
         }
         .btn-outline:hover {
@@ -87,6 +90,9 @@
             border-radius: 4px;
             font-weight: 500;
             cursor: pointer;
+            border: 2px solid var(--green, #79954a);
+            font-size: 1rem;
+            font-family: inherit;
             transition: all 0.3s ease;
         }
         .btn-primary-error:hover {
@@ -105,6 +111,8 @@
         body {
             overflow-x: clip !important;
             overflow-y: visible !important;
+            opacity: 1 !important;
+            visibility: visible !important;
         }
         ::-webkit-scrollbar {
             width: 7px !important;
@@ -133,19 +141,24 @@
             <p class="error-desc">Oops! The page you're looking for doesn't seem to exist. It might have been moved or deleted, or perhaps the URL is incorrect.</p>
             <div class="error-actions">
                 <a href="index.html" class="btn-primary-error">Back to Home</a>
-                <a href="javascript:void(0);" onclick="goBack()" class="btn-outline">Back to Previous</a>
+                <button type="button" onclick="goBack()" class="btn-outline">Back to Previous</button>
             </div>
         </div>
     </div>
 
     <script>
         function goBack() {
-            if (document.referrer && document.referrer !== window.location.href && !document.referrer.endsWith('404.html')) {
-                window.location.href = document.referrer;
-            } else if (window.history.length > 1) {
+            if (window.history && window.history.length > 1) {
                 window.history.back();
+            } else if (document.referrer && !document.referrer.includes('404.html') && !document.referrer.endsWith('/404')) {
+                window.location.href = document.referrer;
             } else {
-                window.location.href = 'index.html';
+                var stored = sessionStorage.getItem('stackly_last_page');
+                if (stored && !stored.includes('404.html') && !stored.endsWith('/404')) {
+                    window.location.href = stored;
+                } else {
+                    window.location.href = 'index.html';
+                }
             }
         }
     </script>

@@ -1,3 +1,8 @@
+try {
+    if (!window.location.href.includes('404.html')) {
+        sessionStorage.setItem('stackly_last_page', window.location.href);
+    }
+} catch(e) {}
 function toggleSidebar() {
     const sidebar = document.getElementById('dashSidebar');
     if (window.innerWidth <= 768) {
