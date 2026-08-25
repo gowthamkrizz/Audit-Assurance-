@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,20 +13,21 @@
     <link rel="stylesheet" href="login.css">
 
     <style>
-        /* Single Clean Side Scrollbar */
+        /* Visible Side Scrollbar */
         html {
             overflow-y: scroll !important;
             overflow-x: hidden !important;
             scrollbar-width: thin !important;
             scrollbar-color: #79954A #f1f5f9 !important;
         }
-        body {
-            overflow-x: clip !important;
-            overflow-y: visible !important;
+        body.login-page,
+        .login-right {
+            scrollbar-width: thin !important;
+            scrollbar-color: #79954A #f1f5f9 !important;
         }
         ::-webkit-scrollbar {
-            width: 7px !important;
-            height: 7px !important;
+            width: 8px !important;
+            height: 8px !important;
             display: block !important;
         }
         ::-webkit-scrollbar-track {
@@ -136,16 +137,16 @@
                         <div class="input-with-icon">
                             <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                             <input type="password" placeholder="Min. 8 characters" id="pwd-input">
-                            <button type="button" class="password-toggle">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            <button type="button" class="password-toggle" id="pwd-toggle" aria-label="Toggle password visibility">
+                                <i class="fa-regular fa-eye"></i>
                             </button>
                         </div>
                         <!-- Live password strength checklist -->
                         <ul class="pwd-checklist" id="pwd-checklist">
                             <li id="pwd-len">At least 8 characters</li>
-                            <li id="pwd-upper">At least one uppercase letter (AÃ¢â‚¬â€œZ)</li>
-                            <li id="pwd-lower">At least one lowercase letter (aÃ¢â‚¬â€œz)</li>
-                            <li id="pwd-num">At least one number (0Ã¢â‚¬â€œ9)</li>
+                            <li id="pwd-upper">At least one uppercase letter (A-Z)</li>
+                            <li id="pwd-lower">At least one lowercase letter (a-z)</li>
+                            <li id="pwd-num">At least one number (0-9)</li>
                         </ul>
                     </div>
 
@@ -202,9 +203,9 @@
                 rules: [
                     { test: v => v.length > 0,          msg: 'Password is required.' },
                     { test: v => v.length >= 8,          msg: 'Password must be at least 8 characters.' },
-                    { test: v => /[A-Z]/.test(v),        msg: 'Password must contain at least one uppercase letter (AÃ¢â‚¬â€œZ).' },
-                    { test: v => /[a-z]/.test(v),        msg: 'Password must contain at least one lowercase letter (aÃ¢â‚¬â€œz).' },
-                    { test: v => /[0-9]/.test(v),        msg: 'Password must contain at least one number (0Ã¢â‚¬â€œ9).' }
+                    { test: v => /[A-Z]/.test(v),        msg: 'Password must contain at least one uppercase letter (A-Z).' },
+                    { test: v => /[a-z]/.test(v),        msg: 'Password must contain at least one lowercase letter (a-z).' },
+                    { test: v => /[0-9]/.test(v),        msg: 'Password must contain at least one number (0-9).' }
                 ]
             }
         };
@@ -256,7 +257,7 @@
             });
         });
 
-                // Remove remember me error on change
+        // Remove remember me error on change
         const rememberCheckbox = form.querySelector('.remember-me input[type="checkbox"]');
         const rememberLabel = form.querySelector('.remember-me');
         rememberCheckbox.addEventListener('change', () => {
@@ -336,6 +337,7 @@
                 }, 1000);
             }
         });
+
         // Live password checklist
         const pwdInput = document.getElementById('pwd-input');
         const checklist = document.getElementById('pwd-checklist');
@@ -360,24 +362,18 @@
         }
 
         // Password toggle visibility
-        document.querySelector('.password-toggle').addEventListener('click', function() {
-            const input = document.getElementById('pwd-input');
-            input.type = input.type === 'password' ? 'text' : 'password';
-        });
+        const toggleBtn = document.getElementById('pwd-toggle');
+        if (toggleBtn && pwdInput) {
+            toggleBtn.addEventListener('click', function() {
+                const isPassword = pwdInput.type === 'password';
+                pwdInput.type = isPassword ? 'text' : 'password';
+                const eyeIcon = this.querySelector('i');
+                if (eyeIcon) {
+                    eyeIcon.className = isPassword ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
+                }
+            });
+        }
     })();
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
