@@ -9,25 +9,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css?v=4.0">
+    <link rel="stylesheet" href="login.css?v=3">
 
     <style>
-        /* Visible Side Scrollbar */
+        /* Single Clean Side Scrollbar */
         html {
             overflow-y: scroll !important;
             overflow-x: hidden !important;
             scrollbar-width: thin !important;
             scrollbar-color: #79954A #f1f5f9 !important;
         }
-        body.login-page,
-        .login-right {
-            scrollbar-width: thin !important;
-            scrollbar-color: #79954A #f1f5f9 !important;
+        body {
+            overflow-x: clip !important;
+            overflow-y: visible !important;
         }
         ::-webkit-scrollbar {
-            width: 8px !important;
-            height: 8px !important;
+            width: 7px !important;
+            height: 7px !important;
             display: block !important;
         }
         ::-webkit-scrollbar-track {
@@ -63,7 +62,7 @@
             <div class="login-left-content">
                 <div class="login-hero-text">
                     <span class="login-badge">WELCOME BACK</span>
-                    <h1>Unlock Your <br>Financial <em>Clarity</em></h1>
+                    <h1>Unlock your <br>financial <em>clarity</em></h1>
                     <p>Access your STACKLY account to manage your financial portfolio, track business expenses, explore tax strategies, and connect with our expert advisors.</p>
                     
                     <div class="login-features">
@@ -98,7 +97,7 @@
 
             <div class="login-form-container">
                 <div class="login-form-titles">
-                    <h2>Sign <span>In</span></h2>
+                    <h2>Sign <span>in</span></h2>
                     <p>Enter your credentials below to access your financial dashboard.</p>
                 </div>
 
@@ -127,7 +126,7 @@
                     <div class="form-group">
                         <label>EMAIL ADDRESS</label>
                         <div class="input-with-icon">
-                            <i class="fa-solid fa-envelope" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                             <input type="email" placeholder="you@company.com">
                         </div>
                     </div>
@@ -137,16 +136,16 @@
                         <div class="input-with-icon">
                             <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                             <input type="password" placeholder="Min. 8 characters" id="pwd-input">
-                            <button type="button" class="password-toggle" id="pwd-toggle" aria-label="Toggle password visibility">
-                                <i class="fa-regular fa-eye"></i>
+                            <button type="button" class="password-toggle">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                             </button>
                         </div>
                         <!-- Live password strength checklist -->
                         <ul class="pwd-checklist" id="pwd-checklist">
                             <li id="pwd-len">At least 8 characters</li>
-                            <li id="pwd-upper">At least one uppercase letter (A-Z)</li>
-                            <li id="pwd-lower">At least one lowercase letter (a-z)</li>
-                            <li id="pwd-num">At least one number (0-9)</li>
+                            <li id="pwd-upper">At least one uppercase letter (A–Z)</li>
+                            <li id="pwd-lower">At least one lowercase letter (a–z)</li>
+                            <li id="pwd-num">At least one number (0–9)</li>
                         </ul>
                     </div>
 
@@ -203,9 +202,9 @@
                 rules: [
                     { test: v => v.length > 0,          msg: 'Password is required.' },
                     { test: v => v.length >= 8,          msg: 'Password must be at least 8 characters.' },
-                    { test: v => /[A-Z]/.test(v),        msg: 'Password must contain at least one uppercase letter (A-Z).' },
-                    { test: v => /[a-z]/.test(v),        msg: 'Password must contain at least one lowercase letter (a-z).' },
-                    { test: v => /[0-9]/.test(v),        msg: 'Password must contain at least one number (0-9).' }
+                    { test: v => /[A-Z]/.test(v),        msg: 'Password must contain at least one uppercase letter (A–Z).' },
+                    { test: v => /[a-z]/.test(v),        msg: 'Password must contain at least one lowercase letter (a–z).' },
+                    { test: v => /[0-9]/.test(v),        msg: 'Password must contain at least one number (0–9).' }
                 ]
             }
         };
@@ -257,57 +256,10 @@
             });
         });
 
-        // Remove remember me error on change
-        const rememberCheckbox = form.querySelector('.remember-me input[type="checkbox"]');
-        const rememberLabel = form.querySelector('.remember-me');
-        rememberCheckbox.addEventListener('change', () => {
-            if (rememberCheckbox.checked) {
-                const err = form.querySelector('.remember-me-error');
-                if (err) err.remove();
-                const checkboxBox = form.querySelector('.checkbox-box');
-                if(checkboxBox) checkboxBox.style.borderColor = '';
-                rememberLabel.style.color = '';
-            }
-        });
-
-        // Form submit
+        // Form submit - Remember me is purely optional
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             const allValid = Object.keys(fields).map(k => validateField(k)).every(Boolean);
-            
-            const rememberCheckbox = form.querySelector('.remember-me input[type="checkbox"]');
-            const rememberLabel = form.querySelector('.remember-me');
-
-            if (!allValid) return;
-
-            let rememberError = form.querySelector('.remember-me-error');
-            if (!rememberCheckbox.checked) {
-                if (!rememberError) {
-                    rememberError = document.createElement('div');
-                    rememberError.className = 'field-error remember-me-error visible';
-                    rememberError.style.display = 'block';
-                    rememberError.style.marginTop = '-10px';
-                    rememberError.style.marginBottom = '20px';
-                    rememberError.style.fontSize = '0.85rem';
-                    rememberError.style.color = '#ef4444'; // Red color
-                    form.querySelector('.form-actions-row').after(rememberError);
-                }
-                rememberError.textContent = 'Please check the "Remember me" box to sign in.';
-                
-                // Add a red border to the custom checkbox box
-                const checkboxBox = form.querySelector('.checkbox-box');
-                if(checkboxBox) checkboxBox.style.borderColor = '#ef4444';
-                rememberLabel.style.color = '#ef4444';
-                
-                return;
-            } else {
-                if (rememberError) {
-                    rememberError.remove();
-                }
-                const checkboxBox = form.querySelector('.checkbox-box');
-                if(checkboxBox) checkboxBox.style.borderColor = '';
-                rememberLabel.style.color = '';
-            }
 
             if (allValid) {
                 const btn = form.querySelector('.login-submit-btn');
@@ -362,18 +314,12 @@
         }
 
         // Password toggle visibility
-        const toggleBtn = document.getElementById('pwd-toggle');
-        if (toggleBtn && pwdInput) {
-            toggleBtn.addEventListener('click', function() {
-                const isPassword = pwdInput.type === 'password';
-                pwdInput.type = isPassword ? 'text' : 'password';
-                const eyeIcon = this.querySelector('i');
-                if (eyeIcon) {
-                    eyeIcon.className = isPassword ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
-                }
-            });
-        }
+        document.querySelector('.password-toggle').addEventListener('click', function() {
+            const input = document.getElementById('pwd-input');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        });
     })();
     </script>
 </body>
 </html>
+

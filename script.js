@@ -659,32 +659,20 @@ if (typeof gsap !== 'undefined') {
         });
     });
 
-    // ----------------------------------------------------
+        // ----------------------------------------------------
     // Insights Section Enhanced Animations
     // ----------------------------------------------------
-    // Base card slide up
-    gsap.from(".insight-card", {
-        scrollTrigger: { trigger: ".insights-grid", start: "top 80%" },
-        y: 60, opacity: 0, duration: 1, stagger: 0.15, ease: "back.out(1.2)"
-    });
-    
-    // Image slight zoom-out effect
-    gsap.from(".insight-card img", {
-        scrollTrigger: { trigger: ".insights-grid", start: "top 80%" },
-        scale: 1.15, duration: 1.2, stagger: 0.15, ease: "power3.out"
-    });
-    
-    // Tag slide in
-    gsap.from(".insight-card .tag", {
-        scrollTrigger: { trigger: ".insights-grid", start: "top 80%" },
-        x: -20, opacity: 0, duration: 0.6, stagger: 0.15, delay: 0.2, ease: "power2.out"
-    });
-    
-    // Heading reveal
-    gsap.from(".insight-card h4", {
-        scrollTrigger: { trigger: ".insights-grid", start: "top 80%" },
-        y: 20, opacity: 0, duration: 0.8, stagger: 0.15, delay: 0.3, ease: "power2.out"
-    });
+    if (document.querySelector(".insights-grid")) {
+        gsap.from(".insight-card", {
+            scrollTrigger: { trigger: ".insights-grid", start: "top 85%", once: true },
+            y: 30,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: "power2.out",
+            clearProps: "all"
+        });
+    }
 
     // ----------------------------------------------------
     // Expertise Section Enhanced Animations
@@ -1392,3 +1380,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <title>Client Dashboard - Stackly</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css?v=3">
 </head>
 <body class="dash-body">
     <div class="mobile-overlay"></div>
@@ -23,6 +23,8 @@
             <a href="#" class="dash-nav-link active" data-target="section-overview"><i class="material-symbols-outlined">dashboard</i> <span>Overview</span></a>
             <a href="#" class="dash-nav-link" data-target="section-tax"><i class="material-symbols-outlined">description</i> <span>Tax Documents</span></a>
             <a href="#" class="dash-nav-link" data-target="section-invoices"><i class="material-symbols-outlined">receipt_long</i> <span>Invoices</span></a>
+            <a href="#" class="dash-nav-link" data-target="section-advisory"><i class="material-symbols-outlined">trending_up</i> <span>Financial Advisory</span></a>
+            <a href="#" class="dash-nav-link" data-target="section-reports"><i class="material-symbols-outlined">assessment</i> <span>Audit & Reports</span></a>
             <a href="#" class="dash-nav-link" data-target="section-messages"><i class="material-symbols-outlined">mail</i> <span>Messages</span></a>
             
             <a href="#" class="dash-nav-link" style="margin-top: auto;" data-target="section-settings"><i class="material-symbols-outlined">settings</i> <span>Settings</span></a>
@@ -40,6 +42,10 @@
                 <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()"><i class="material-symbols-outlined">menu</i></button>
             </div>
             <div class="header-right">
+                <div class="dash-search">
+                    <i class="material-symbols-outlined">search</i>
+                    <input type="text" placeholder="Search documents, invoices...">
+                </div>
                 <div class="profile-widget dropdown-container" style="position:relative;">
                     <div class="profile-avatar" style="background:#1f2937; border-radius: 8px;"></div>
                     <div class="profile-dropdown shadow-card">
@@ -63,6 +69,8 @@
 
         <!-- Content Area -->
         <div class="dash-content">
+        
+        <!-- SECTION: Overview -->
         <div id="section-overview" class="dash-section active-section">
             <div class="dash-page-header animate-fade-up">
                 <div>
@@ -98,45 +106,39 @@
 
             <!-- Bento Grid -->
             <div class="bento-grid">
-                <!-- Left: Chart -->
                 <div class="dash-card animate-fade-up delay-3">
                     <div class="dash-card-header">
-                        <h3 class="dash-card-title">Income vs Expenses</h3>
+                        <h3 class="dash-card-title">Income vs expenses</h3>
                     </div>
                     <div class="dash-card-body">
                         <div class="css-bar-chart">
                             <div class="bar-group">
-                                <div class="bar-track"><div class="bar-fill" style="height:0" data-height="60%"></div></div>
-                                <span class="bar-label">Jan</span>
-                            </div>
-                            <div class="bar-group">
-                                <div class="bar-track"><div class="bar-fill alt" style="height:0" data-height="40%"></div></div>
-                                <span class="bar-label">Feb</span>
-                            </div>
-                            <div class="bar-group">
-                                <div class="bar-track"><div class="bar-fill" style="height:0" data-height="85%"></div></div>
-                                <span class="bar-label">Mar</span>
-                            </div>
-                            <div class="bar-group">
-                                <div class="bar-track"><div class="bar-fill alt" style="height:0" data-height="30%"></div></div>
-                                <span class="bar-label">Apr</span>
-                            </div>
-                            <div class="bar-group">
-                                <div class="bar-track"><div class="bar-fill" style="height:0" data-height="75%"></div></div>
-                                <span class="bar-label">May</span>
-                            </div>
-                            <div class="bar-group">
-                                <div class="bar-track"><div class="bar-fill alt" style="height:0" data-height="50%"></div></div>
+                                <div class="bar-track"><div class="bar-fill" data-height="65%" style="height: 0;"></div></div>
                                 <span class="bar-label">Jun</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar-track"><div class="bar-fill" data-height="80%" style="height: 0;"></div></div>
+                                <span class="bar-label">Jul</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar-track"><div class="bar-fill" data-height="45%" style="height: 0;"></div></div>
+                                <span class="bar-label">Aug</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar-track"><div class="bar-fill" data-height="90%" style="height: 0;"></div></div>
+                                <span class="bar-label">Sep</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar-track"><div class="bar-fill" data-height="75%" style="height: 0;"></div></div>
+                                <span class="bar-label">Oct</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Recent Activity -->
                 <div class="dash-card animate-fade-up delay-4">
                     <div class="dash-card-header">
-                        <h3 class="dash-card-title">Recent Activity</h3>
+                        <h3 class="dash-card-title">Recent activity</h3>
                     </div>
                     <div class="dash-card-body">
                         <div class="activity-list">
@@ -144,83 +146,608 @@
                                 <div class="activity-icon"><i class="material-symbols-outlined">description</i></div>
                                 <div class="activity-details">
                                     <h4>Q2 Tax Report</h4>
-                                    <p>Uploaded by Advisor</p>
+                                    <p>Uploaded by Marcus V.</p>
                                 </div>
                                 <div class="activity-time">2h ago</div>
                             </div>
                             <div class="activity-item">
-                                <div class="activity-icon"><i class="material-symbols-outlined">receipt_long</i></div>
+                                <div class="activity-icon"><i class="material-symbols-outlined">payments</i></div>
                                 <div class="activity-details">
                                     <h4>Invoice #2041 Paid</h4>
-                                    <p>Thank you for your payment</p>
+                                    <p>Amount: $1,200.00</p>
                                 </div>
                                 <div class="activity-time">1d ago</div>
                             </div>
                             <div class="activity-item">
-                                <div class="activity-icon"><i class="material-symbols-outlined">mail</i></div>
+                                <div class="activity-icon"><i class="material-symbols-outlined">chat</i></div>
                                 <div class="activity-details">
                                     <h4>Message from Mark</h4>
-                                    <p>Please sign the W-9 form</p>
+                                    <p>Re: Audit documents</p>
                                 </div>
-                                <div class="activity-time">2d ago</div>
+                                <div class="activity-time">3d ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION: Tax Documents (EXPANDED & FULLY FUNCTIONAL) -->
+        <div id="section-tax" class="dash-section" style="display:none;">
+            <div class="dash-page-header animate-fade-up">
+                <div>
+                    <h1 class="dash-page-title">Tax documents & filings</h1>
+                    <p class="dash-page-subtitle">Manage, download, and review your annual returns, 1099/W-2 statements, and quarterly estimates.</p>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn-primary" onclick="window.location.href='404.html'">
+                        <i class="material-symbols-outlined">upload_file</i> Upload Tax Form
+                    </button>
+                    <button class="btn-primary" style="background:#ffffff; color:var(--dash-text-main); border:1px solid var(--dash-border);" onclick="window.location.href='404.html'">
+                        <i class="material-symbols-outlined">schedule</i> Request Extension
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tax KPI Summary Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card animate-fade-up delay-1">
+                    <div class="kpi-icon"><i class="material-symbols-outlined">folder_special</i></div>
+                    <div class="kpi-title">Current Filing Status</div>
+                    <div class="kpi-value">FY 2025-26</div>
+                    <div class="kpi-trend trend-up"><i class="material-symbols-outlined" style="font-size:14px">check_circle</i> All current quarters compliant</div>
+                </div>
+                <div class="kpi-card animate-fade-up delay-2">
+                    <div class="kpi-icon"><i class="material-symbols-outlined">account_balance</i></div>
+                    <div class="kpi-title">Estimated Tax Refund</div>
+                    <div class="kpi-value">+$3,420.00</div>
+                    <div class="kpi-trend trend-up"><i class="material-symbols-outlined" style="font-size:14px">trending_up</i> Calculated with itemized deductions</div>
+                </div>
+                <div class="kpi-card animate-fade-up delay-3">
+                    <div class="kpi-icon" style="color:var(--dash-primary);"><i class="material-symbols-outlined">verified</i></div>
+                    <div class="kpi-title">Verified Documents</div>
+                    <div class="kpi-value">8 of 9</div>
+                    <div class="kpi-trend trend-warning" style="color:var(--dash-warning);"><i class="material-symbols-outlined" style="font-size:14px">pending</i> 1 document in review</div>
+                </div>
+            </div>
+
+            <!-- Bento: Quarterly Schedule + Tax Deduction Checklist -->
+            <div class="bento-grid" style="margin-bottom: 24px;">
+                <!-- Quarterly Schedule Card -->
+                <div class="dash-card animate-fade-up delay-2">
+                    <div class="dash-card-header">
+                        <h3 class="dash-card-title">Quarterly Estimated Tax Schedule</h3>
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--dash-primary);">FY 2026</span>
+                    </div>
+                    <div class="dash-card-body">
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <div style="width: 32px; height: 32px; border-radius: 50%; background: #dcfce7; color: #166534; display: flex; align-items: center; justify-content: center; font-size: 16px;"><i class="material-symbols-outlined">check</i></div>
+                                    <div>
+                                        <strong style="font-size: 0.95rem; display: block;">Q1 Estimate (Apr 15)</strong>
+                                        <span style="font-size: 0.8rem; color: var(--dash-text-muted);">Amount Paid: $4,200.00</span>
+                                    </div>
+                                </div>
+                                <span class="status-badge status-active">Paid</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <div style="width: 32px; height: 32px; border-radius: 50%; background: #dcfce7; color: #166534; display: flex; align-items: center; justify-content: center; font-size: 16px;"><i class="material-symbols-outlined">check</i></div>
+                                    <div>
+                                        <strong style="font-size: 0.95rem; display: block;">Q2 Estimate (Jun 15)</strong>
+                                        <span style="font-size: 0.8rem; color: var(--dash-text-muted);">Amount Paid: $4,200.00</span>
+                                    </div>
+                                </div>
+                                <span class="status-badge status-active">Paid</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #fffdf5; border-radius: 10px; border: 1px solid #fef08a;">
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <div style="width: 32px; height: 32px; border-radius: 50%; background: #fef9c3; color: #854d0e; display: flex; align-items: center; justify-content: center; font-size: 16px;"><i class="material-symbols-outlined">timer</i></div>
+                                    <div>
+                                        <strong style="font-size: 0.95rem; display: block;">Q3 Estimate (Sep 15)</strong>
+                                        <span style="font-size: 0.8rem; color: var(--dash-text-muted);">Projected: $4,200.00 &bull; Due in 21 days</span>
+                                    </div>
+                                </div>
+                                <a href="404.html" class="btn-primary" style="padding: 4px 12px; font-size: 12px; text-decoration: none;">Pay Now</a>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <div style="width: 32px; height: 32px; border-radius: 50%; background: #e5e7eb; color: #6b7280; display: flex; align-items: center; justify-content: center; font-size: 16px;"><i class="material-symbols-outlined">hourglass_top</i></div>
+                                    <div>
+                                        <strong style="font-size: 0.95rem; display: block;">Q4 Estimate (Jan 15, 2027)</strong>
+                                        <span style="font-size: 0.8rem; color: var(--dash-text-muted);">Scheduled Assessment</span>
+                                    </div>
+                                </div>
+                                <span style="font-size: 0.75rem; color: #6b7280; font-weight: 600;">Upcoming</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tax Deduction & Write-Off Checklist -->
+                <div class="dash-card animate-fade-up delay-3">
+                    <div class="dash-card-header">
+                        <h3 class="dash-card-title">Tax Deduction Checklist</h3>
+                    </div>
+                    <div class="dash-card-body">
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon" style="color:#16a34a; background:#dcfce7;"><i class="material-symbols-outlined">check</i></div>
+                                <div class="activity-details">
+                                    <h4>Home Office Deductions</h4>
+                                    <p>Simplified square-foot method applied ($1,500)</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon" style="color:#16a34a; background:#dcfce7;"><i class="material-symbols-outlined">check</i></div>
+                                <div class="activity-details">
+                                    <h4>Business Vehicle Mileage</h4>
+                                    <p>12,400 business miles logged ($8,308)</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon" style="color:#16a34a; background:#dcfce7;"><i class="material-symbols-outlined">check</i></div>
+                                <div class="activity-details">
+                                    <h4>Retirement SEP-IRA Contribution</h4>
+                                    <p>Max deduction shield claimed ($22,500)</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon" style="color:var(--dash-warning); background:#fef9c3;"><i class="material-symbols-outlined">receipt_long</i></div>
+                                <div class="activity-details">
+                                    <h4>Health Insurance Premiums</h4>
+                                    <p>Awaiting final proof of payment</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-        
-        </div>
-        
-        <div id="section-tax" class="dash-section" style="display:none;">
-            <div class="dash-page-header animate-fade-up">
-                <div>
-                    <h1 class="dash-page-title">Tax Documents</h1>
-                    <p class="dash-page-subtitle">Secure access to your official filings.</p>
+            <!-- Tax Documents Table -->
+            <div class="dash-card animate-fade-up delay-3">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">All Tax Forms & Official Filings</h3>
+                    <button class="btn-primary" style="padding: 6px 14px; font-size: 0.8rem;" onclick="window.location.href='404.html'">
+                        <i class="material-symbols-outlined" style="font-size: 16px;">download</i> Download All (ZIP)
+                    </button>
                 </div>
-                <button class="btn-primary" onclick="window.location.href='404.html'"><i class="material-symbols-outlined">upload</i> Upload Document</button>
-            </div>
-            
-            <div class="dash-table-container animate-fade-up delay-1">
-                <table class="dash-table">
-                    <thead>
-                        <tr><th>Document Name</th><th>Tax Year</th><th>Type</th><th>Date Uploaded</th><th>Action</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr class="animate-fade-up delay-1"><td><div style="display:flex; align-items:center; gap:10px;"><div style="width:40px; height:40px; border-radius:8px; background:#fee2e2; color:#ef4444; display:flex; align-items:center; justify-content:center;"><i class="material-symbols-outlined">picture_as_pdf</i></div> <strong>2025_Q4_Filing.pdf</strong></div></td><td>2025</td><td>Quarterly Filing</td><td>Jan 15, 2026</td><td><a href="404.html" style="color:var(--green); text-decoration:none; font-weight:600;"><i class="material-symbols-outlined" style="vertical-align:middle; font-size:1.2rem;">download</i> Download</a></td></tr>
-                        <tr class="animate-fade-up delay-2"><td><div style="display:flex; align-items:center; gap:10px;"><div style="width:40px; height:40px; border-radius:8px; background:#fee2e2; color:#ef4444; display:flex; align-items:center; justify-content:center;"><i class="material-symbols-outlined">picture_as_pdf</i></div> <strong>2025_W2_Summary.pdf</strong></div></td><td>2025</td><td>W-2</td><td>Jan 10, 2026</td><td><a href="404.html" style="color:var(--green); text-decoration:none; font-weight:600;"><i class="material-symbols-outlined" style="vertical-align:middle; font-size:1.2rem;">download</i> Download</a></td></tr>
-                        <tr class="animate-fade-up delay-3"><td><div style="display:flex; align-items:center; gap:10px;"><div style="width:40px; height:40px; border-radius:8px; background:#fee2e2; color:#ef4444; display:flex; align-items:center; justify-content:center;"><i class="material-symbols-outlined">picture_as_pdf</i></div> <strong>2024_Annual_Return.pdf</strong></div></td><td>2024</td><td>Annual Return</td><td>Apr 12, 2025</td><td><a href="404.html" style="color:var(--green); text-decoration:none; font-weight:600;"><i class="material-symbols-outlined" style="vertical-align:middle; font-size:1.2rem;">download</i> Download</a></td></tr>
-                    </tbody>
-                </table>
+                <div class="dash-card-body" style="padding: 0;">
+                    <div class="dash-table-wrapper">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Document Name</th>
+                                    <th>Tax Year</th>
+                                    <th>File Format</th>
+                                    <th>Filing Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><div style="display:flex; align-items:center; gap:12px;"><i class="material-symbols-outlined" style="color:#ef4444;">picture_as_pdf</i><strong>1099-NEC Nonemployee Compensation</strong></div></td>
+                                    <td>2025</td>
+                                    <td>PDF (1.4 MB)</td>
+                                    <td><span class="status-badge status-active">Processed & Filed</span></td>
+                                    <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Download</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div style="display:flex; align-items:center; gap:12px;"><i class="material-symbols-outlined" style="color:#ef4444;">picture_as_pdf</i><strong>Form 1040 Individual Tax Return</strong></div></td>
+                                    <td>2025</td>
+                                    <td>PDF (3.2 MB)</td>
+                                    <td><span class="status-badge status-active">Filed with IRS</span></td>
+                                    <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Download</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div style="display:flex; align-items:center; gap:12px;"><i class="material-symbols-outlined" style="color:#ef4444;">picture_as_pdf</i><strong>W-2 Annual Wage & Tax Statement</strong></div></td>
+                                    <td>2025</td>
+                                    <td>PDF (920 KB)</td>
+                                    <td><span class="status-badge status-active">Processed</span></td>
+                                    <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Download</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div style="display:flex; align-items:center; gap:12px;"><i class="material-symbols-outlined" style="color:#ef4444;">picture_as_pdf</i><strong>Schedule C Profit / Loss from Business</strong></div></td>
+                                    <td>2025</td>
+                                    <td>PDF (1.8 MB)</td>
+                                    <td><span class="status-badge status-active">Verified by CPA</span></td>
+                                    <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Download</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div style="display:flex; align-items:center; gap:12px;"><i class="material-symbols-outlined" style="color:var(--dash-warning);">pending_actions</i><strong>Form 8829 Home Office Expenses</strong></div></td>
+                                    <td>2026</td>
+                                    <td>PDF (780 KB)</td>
+                                    <td><span class="status-badge status-pending">Under Review</span></td>
+                                    <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none; background:#854d0e;">Review Draft</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <!-- SECTION: Invoices (EXPANDED & FULLY FUNCTIONAL) -->
         <div id="section-invoices" class="dash-section" style="display:none;">
             <div class="dash-page-header animate-fade-up">
                 <div>
-                    <h1 class="dash-page-title">Invoices</h1>
-                    <p class="dash-page-subtitle">Track your billing and payments.</p>
+                    <h1 class="dash-page-title">Invoices & billing history</h1>
+                    <p class="dash-page-subtitle">Track advisory fees, manage automated payment methods, and download verified tax receipts.</p>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn-primary" onclick="window.location.href='404.html'">
+                        <i class="material-symbols-outlined">credit_card</i> Pay Balance ($1,200.00)
+                    </button>
+                    <button class="btn-primary" style="background:#ffffff; color:var(--dash-text-main); border:1px solid var(--dash-border);" onclick="window.location.href='404.html'">
+                        <i class="material-symbols-outlined">receipt</i> Download Statement
+                    </button>
                 </div>
             </div>
-            
-            <div class="dash-table-container animate-fade-up delay-1">
+
+            <!-- Invoices KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card animate-fade-up delay-1">
+                    <div class="kpi-icon"><i class="material-symbols-outlined">paid</i></div>
+                    <div class="kpi-title">Total Paid YTD</div>
+                    <div class="kpi-value">$14,800.00</div>
+                    <div class="kpi-trend trend-up"><i class="material-symbols-outlined" style="font-size:14px">trending_up</i> 100% on-time settlement</div>
+                </div>
+                <div class="kpi-card animate-fade-up delay-2">
+                    <div class="kpi-icon" style="color:var(--dash-warning);"><i class="material-symbols-outlined">pending</i></div>
+                    <div class="kpi-title">Current Balance Due</div>
+                    <div class="kpi-value">$1,200.00</div>
+                    <div class="kpi-trend trend-warning" style="color:var(--dash-warning);"><i class="material-symbols-outlined" style="font-size:14px">timer</i> Due Sep 15, 2026</div>
+                </div>
+                <div class="kpi-card animate-fade-up delay-3">
+                    <div class="kpi-icon"><i class="material-symbols-outlined">loyalty</i></div>
+                    <div class="kpi-title">Active Retainer Tier</div>
+                    <div class="kpi-value">Business Plus</div>
+                    <div class="kpi-trend trend-up"><i class="material-symbols-outlined" style="font-size:14px">check_circle</i> Renews Oct 01, 2026</div>
+                </div>
+            </div>
+
+            <!-- Bento: Payment Methods & Advisory Retainer Quota -->
+            <div class="bento-grid" style="margin-bottom: 24px;">
+                <!-- Payment Methods Card -->
+                <div class="dash-card animate-fade-up delay-2">
+                    <div class="dash-card-header">
+                        <h3 class="dash-card-title">Stored Payment Methods</h3>
+                        <button class="btn-primary" style="padding: 4px 10px; font-size: 0.75rem;" onclick="window.location.href='404.html'">
+                            <i class="material-symbols-outlined" style="font-size: 14px;">add</i> Add Card
+                        </button>
+                    </div>
+                    <div class="dash-card-body">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <i class="fa-brands fa-cc-visa" style="font-size: 28px; color: #1a1f71;"></i>
+                                    <div>
+                                        <strong style="font-size: 0.9rem; display: block;">Visa ending in 4242</strong>
+                                        <span style="font-size: 0.78rem; color: var(--dash-text-muted);">Expires 08/2028 &bull; Auto-Pay Active</span>
+                                    </div>
+                                </div>
+                                <span class="status-badge status-active">Primary</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <i class="material-symbols-outlined" style="font-size: 28px; color: var(--dash-primary);">account_balance</i>
+                                    <div>
+                                        <strong style="font-size: 0.9rem; display: block;">Chase Business Checking (â€¢â€¢8891)</strong>
+                                        <span style="font-size: 0.78rem; color: var(--dash-text-muted);">ACH Direct Debit &bull; Verified</span>
+                                    </div>
+                                </div>
+                                <span style="font-size: 0.8rem; color: #6b7280; font-weight: 500;">Backup</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Retainer Quota Card -->
+                <div class="dash-card animate-fade-up delay-3">
+                    <div class="dash-card-header">
+                        <h3 class="dash-card-title">Retainer Hours & Services</h3>
+                    </div>
+                    <div class="dash-card-body">
+                        <div style="margin-bottom: 18px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                                <strong style="font-size: 0.9rem;">Quarterly CPA Consultation Hours</strong>
+                                <span style="color: var(--dash-primary); font-weight: 700;">24 / 30 Hrs</span>
+                            </div>
+                            <div style="width: 100%; background: #e5e7eb; border-radius: 6px; height: 8px;">
+                                <div style="width: 80%; background: var(--dash-primary); height: 100%; border-radius: 6px;"></div>
+                            </div>
+                            <p style="font-size: 0.78rem; color: var(--dash-text-muted); margin-top: 4px;">6 hours rollover to Q4</p>
+                        </div>
+
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                                <strong style="font-size: 0.9rem;">Monthly Bookkeeping Reconciliation</strong>
+                                <span style="color: #10b981; font-weight: 700;">100% Completed</span>
+                            </div>
+                            <div style="width: 100%; background: #e5e7eb; border-radius: 6px; height: 8px;">
+                                <div style="width: 100%; background: #10b981; height: 100%; border-radius: 6px;"></div>
+                            </div>
+                            <p style="font-size: 0.78rem; color: var(--dash-text-muted); margin-top: 4px;">All ledger entries reconciled through Aug 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invoices Table -->
+            <div class="dash-card animate-fade-up delay-3">
+                <div class="dash-card-header">
+                    <h3 class="dash-card-title">Billing & Invoice Statements</h3>
+                    <button class="btn-primary" style="padding: 6px 14px; font-size: 0.8rem;" onclick="window.location.href='404.html'">
+                        <i class="material-symbols-outlined" style="font-size: 16px;">download</i> Export Billing History
+                    </button>
+                </div>
+                <div class="dash-card-body" style="padding: 0;">
+                    <div class="dash-table-wrapper">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Invoice #</th>
+                                    <th>Description</th>
+                                    <th>Due Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Receipt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>#INV-2042</strong></td>
+                                    <td>Monthly Bookkeeping & Tax Retainer</td>
+                                    <td>Sep 15, 2026</td>
+                                    <td><strong>$1,200.00</strong></td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                    <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Pay Now</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2041</strong></td>
+                                    <td>Monthly Bookkeeping & CPA Advisory</td>
+                                    <td>Aug 15, 2026</td>
+                                    <td><strong>$1,200.00</strong></td>
+                                    <td><span class="status-badge status-active">Paid</span></td>
+                                    <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Download PDF</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2040</strong></td>
+                                    <td>Q2 Corporate Tax Filing & Audit Preparation</td>
+                                    <td>Jul 15, 2026</td>
+                                    <td><strong>$1,850.00</strong></td>
+                                    <td><span class="status-badge status-active">Paid</span></td>
+                                    <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Download PDF</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2039</strong></td>
+                                    <td>Monthly Bookkeeping & Retainer</td>
+                                    <td>Jun 15, 2026</td>
+                                    <td><strong>$1,200.00</strong></td>
+                                    <td><span class="status-badge status-active">Paid</span></td>
+                                    <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Download PDF</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2038</strong></td>
+                                    <td>Annual Statutory Audit & Compliance Certification</td>
+                                    <td>May 10, 2026</td>
+                                    <td><strong>$3,500.00</strong></td>
+                                    <td><span class="status-badge status-active">Paid</span></td>
+                                    <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Download PDF</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2037</strong></td>
+                                    <td>Monthly Bookkeeping & Strategy Session</td>
+                                    <td>Apr 15, 2026</td>
+                                    <td><strong>$1,200.00</strong></td>
+                                    <td><span class="status-badge status-active">Paid</span></td>
+                                    <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Download PDF</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION: Financial Advisory & Planning -->
+        <div id="section-advisory" class="dash-section" style="display:none;">
+            <div class="dash-page-header animate-fade-up">
+                <div>
+                    <h1 class="dash-page-title">Financial advisory</h1>
+                    <p class="dash-page-subtitle">Personalized strategic advisory, tax savings forecasts, and advisor consultation sessions.</p>
+                </div>
+                <button class="btn-primary" onclick="window.location.href='404.html'">
+                    <i class="material-symbols-outlined">video_call</i> Book 1-on-1 Consultation
+                </button>
+            </div>
+
+            <!-- Advisory KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card animate-fade-up delay-1">
+                    <div class="kpi-icon"><i class="material-symbols-outlined">savings</i></div>
+                    <div class="kpi-title">Projected Tax Savings</div>
+                    <div class="kpi-value">$18,400</div>
+                    <div class="kpi-trend trend-up"><i class="material-symbols-outlined" style="font-size:14px">trending_up</i> Optimized for FY 2026</div>
+                </div>
+                <div class="kpi-card animate-fade-up delay-2">
+                    <div class="kpi-icon"><i class="material-symbols-outlined">monitoring</i></div>
+                    <div class="kpi-title">Portfolio Growth Target</div>
+                    <div class="kpi-value">+14.2%</div>
+                    <div class="kpi-trend trend-up"><i class="material-symbols-outlined" style="font-size:14px">check_circle</i> On track for Q4</div>
+                </div>
+                <div class="kpi-card animate-fade-up delay-3">
+                    <div class="kpi-icon"><i class="material-symbols-outlined">health_and_safety</i></div>
+                    <div class="kpi-title">Financial Health Score</div>
+                    <div class="kpi-value">94/100</div>
+                    <div class="kpi-trend trend-up">Excellent (Top 5% category)</div>
+                </div>
+            </div>
+
+            <!-- Bento Advisory Grid -->
+            <div class="bento-grid">
+                <!-- Goals Tracker -->
+                <div class="dash-card animate-fade-up delay-3">
+                    <div class="dash-card-header">
+                        <h3 class="dash-card-title">Strategic Milestones & Goals</h3>
+                    </div>
+                    <div class="dash-card-body">
+                        <div style="margin-bottom: 20px;">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                                <strong>Retirement Tax-Deferred Shield</strong>
+                                <span style="color:var(--dash-primary); font-weight:700;">85% Completed</span>
+                            </div>
+                            <div style="width: 100%; background: #e5e7eb; border-radius: 6px; height: 10px;">
+                                <div style="width: 85%; background: var(--dash-primary); height: 100%; border-radius: 6px;"></div>
+                            </div>
+                            <p style="font-size:0.8rem; color:var(--dash-text-muted); margin-top:4px;">Target: $40,000 / Current: $34,000</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                                <strong>Business Working Capital Reserve</strong>
+                                <span style="color:#3b82f6; font-weight:700;">70% Completed</span>
+                            </div>
+                            <div style="width: 100%; background: #e5e7eb; border-radius: 6px; height: 10px;">
+                                <div style="width: 70%; background: #3b82f6; height: 100%; border-radius: 6px;"></div>
+                            </div>
+                            <p style="font-size:0.8rem; color:var(--dash-text-muted); margin-top:4px;">Target: $100,000 / Current: $70,000</p>
+                        </div>
+
+                        <div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                                <strong>Depreciation Asset Write-off</strong>
+                                <span style="color:#10b981; font-weight:700;">100% Completed</span>
+                            </div>
+                            <div style="width: 100%; background: #e5e7eb; border-radius: 6px; height: 10px;">
+                                <div style="width: 100%; background: #10b981; height: 100%; border-radius: 6px;"></div>
+                            </div>
+                            <p style="font-size:0.8rem; color:var(--dash-text-muted); margin-top:4px;">Fully claimed under Section 179</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advisor Profile & Next Meeting -->
+                <div class="dash-card animate-fade-up delay-4">
+                    <div class="dash-card-header">
+                        <h3 class="dash-card-title">Assigned Senior CPA</h3>
+                    </div>
+                    <div class="dash-card-body" style="text-align:center;">
+                        <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--dash-primary-light); color: var(--dash-primary); display:flex; align-items:center; justify-content:center; font-size:1.8rem; margin: 0 auto 12px;">
+                            <i class="material-symbols-outlined" style="font-size: 36px;">account_circle</i>
+                        </div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 2px;">Marcus Vance, CPA</h4>
+                        <p style="font-size: 0.85rem; color: var(--dash-text-muted); margin-bottom: 16px;">Senior Corporate Tax Advisory</p>
+                        
+                        <div style="background: var(--dash-bg); padding: 12px; border-radius: 10px; margin-bottom: 16px; text-align: left;">
+                            <div style="font-size: 0.8rem; color: var(--dash-text-muted); margin-bottom: 2px;">Next Scheduled Session:</div>
+                            <div style="font-weight: 600; font-size: 0.9rem; color: var(--dash-text-main);">Sep 04, 2026 at 2:00 PM EST</div>
+                        </div>
+
+                        <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="window.location.href='404.html'">
+                            <i class="material-symbols-outlined">video_call</i> Join Virtual Room
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION: Audit & Reports -->
+        <div id="section-reports" class="dash-section" style="display:none;">
+            <div class="dash-page-header animate-fade-up">
+                <div>
+                    <h1 class="dash-page-title">Audit & financial reports</h1>
+                    <p class="dash-page-subtitle">Download certified financial audit reports, P&L statements, and balance certifications.</p>
+                </div>
+                <button class="btn-primary" onclick="window.location.href='404.html'">
+                    <i class="material-symbols-outlined">post_add</i> Request Custom Audit
+                </button>
+            </div>
+
+            <!-- Reports KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card animate-fade-up delay-1">
+                    <div class="kpi-icon"><i class="material-symbols-outlined">verified_user</i></div>
+                    <div class="kpi-title">Audit Compliance Index</div>
+                    <div class="kpi-value">100%</div>
+                    <div class="kpi-trend trend-up"><i class="material-symbols-outlined" style="font-size:14px">check_circle</i> Fully certified & sealed</div>
+                </div>
+                <div class="kpi-card animate-fade-up delay-2">
+                    <div class="kpi-icon"><i class="material-symbols-outlined">folder_open</i></div>
+                    <div class="kpi-title">Archived Audit Reports</div>
+                    <div class="kpi-value">16 Files</div>
+                    <div class="kpi-trend trend-up">All fiscal quarters available</div>
+                </div>
+                <div class="kpi-card animate-fade-up delay-3">
+                    <div class="kpi-icon"><i class="material-symbols-outlined">event_available</i></div>
+                    <div class="kpi-title">Fiscal Status</div>
+                    <div class="kpi-value">FY 2025-26</div>
+                    <div class="kpi-trend trend-up">Current Cycle Active</div>
+                </div>
+            </div>
+
+            <!-- Reports Repository Table -->
+            <div class="dash-table-container animate-fade-up delay-3">
                 <table class="dash-table">
                     <thead>
-                        <tr><th>Invoice ID</th><th>Description</th><th>Amount</th><th>Due Date</th><th>Status</th><th>Action</th></tr>
+                        <tr>
+                            <th>Report Name</th>
+                            <th>Fiscal Period</th>
+                            <th>Date Generated</th>
+                            <th>Format</th>
+                            <th>Verification Status</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr class="animate-fade-up delay-1"><td><strong>#INV-2026-002</strong></td><td>Q1 Accounting Retainer</td><td>$1,200.00</td><td>Nov 01, 2026</td><td><span style="background:#fef3c7; color:#92400e; padding:6px 12px; border-radius:20px; font-size:0.75rem; font-weight:700;">Pending</span></td><td><button class="btn-primary" onclick="window.location.href='404.html'" style="padding:8px 16px; border-radius:6px; font-size:0.85rem;">Pay Now</button></td></tr>
-                        <tr class="animate-fade-up delay-2"><td><strong>#INV-2026-001</strong></td><td>Annual Audit Prep</td><td>$3,500.00</td><td>Sep 15, 2026</td><td><span style="background:#dcfce7; color:#166534; padding:6px 12px; border-radius:20px; font-size:0.75rem; font-weight:700;">Paid</span></td><td><a href="404.html" style="color:var(--green); text-decoration:none; font-weight:600;"><i class="material-symbols-outlined" style="vertical-align:middle; font-size:1.2rem;">receipt</i> Receipt</a></td></tr>
+                        <tr>
+                            <td><div style="display:flex; align-items:center; gap:12px;"><i class="material-symbols-outlined" style="color:#ef4444;">picture_as_pdf</i><strong>Q2 Audited P&L Statement</strong></div></td>
+                            <td>Q2 (Apr - Jun 2026)</td>
+                            <td>Jul 10, 2026</td>
+                            <td>PDF (1.8 MB)</td>
+                            <td><span class="status-badge status-active">Verified & Sealed</span></td>
+                            <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Download</a></td>
+                        </tr>
+                        <tr>
+                            <td><div style="display:flex; align-items:center; gap:12px;"><i class="material-symbols-outlined" style="color:#10b981;">table_view</i><strong>Annual Balance Sheet Audit</strong></div></td>
+                            <td>FY 2024 - 2025</td>
+                            <td>May 20, 2026</td>
+                            <td>XLSX (3.4 MB)</td>
+                            <td><span class="status-badge status-active">Verified & Sealed</span></td>
+                            <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Download</a></td>
+                        </tr>
+                        <tr>
+                            <td><div style="display:flex; align-items:center; gap:12px;"><i class="material-symbols-outlined" style="color:#ef4444;">picture_as_pdf</i><strong>Statutory Tax Compliance Certificate</strong></div></td>
+                            <td>Annual 2025</td>
+                            <td>Mar 30, 2026</td>
+                            <td>PDF (950 KB)</td>
+                            <td><span class="status-badge status-active">Approved by CPA</span></td>
+                            <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none;">Download</a></td>
+                        </tr>
+                        <tr>
+                            <td><div style="display:flex; align-items:center; gap:12px;"><i class="material-symbols-outlined" style="color:#ef4444;">picture_as_pdf</i><strong>Quarterly Cash Flow Projections</strong></div></td>
+                            <td>Q3 Forecast</td>
+                            <td>Aug 14, 2026</td>
+                            <td>PDF (1.2 MB)</td>
+                            <td><span class="status-badge status-pending">Draft Review</span></td>
+                            <td><a href="404.html" class="btn-primary" style="padding:4px 10px; font-size:12px; text-decoration:none; background:#854d0e;">Preview</a></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
+        <!-- SECTION: Messages -->
         <div id="section-messages" class="dash-section" style="display:none;">
             <div class="dash-page-header animate-fade-up">
                 <div>
                     <h1 class="dash-page-title">Messages</h1>
-                    <p class="dash-page-subtitle">Secure communications with your advisor.</p>
+                    <p class="dash-page-subtitle">Chat with your accountant or support.</p>
                 </div>
             </div>
             
@@ -238,16 +765,16 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Advisor Team</strong></td>
-                                    <td>Missing W-9 Form</td>
+                                    <td><strong>Marcus Vance (CPA)</strong></td>
+                                    <td>Review of Q2 Tax Report</td>
                                     <td>Oct 24, 2026</td>
                                     <td><a href="404.html" class="btn-primary" style="padding: 4px 8px; font-size: 12px; text-decoration:none; color:white;">Reply</a></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Support</strong></td>
-                                    <td>Your Invoice is Ready</td>
-                                    <td>Oct 15, 2026</td>
-                                    <td><a href="404.html" class="btn-primary" style="padding: 4px 8px; font-size: 12px; text-decoration:none; color:white;">Reply</a></td>
+                                    <td><strong>Support Team</strong></td>
+                                    <td>Welcome to Stackly!</td>
+                                    <td>Oct 10, 2026</td>
+                                    <td><a href="404.html" class="btn-primary" style="padding: 4px 8px; font-size: 12px; text-decoration:none; color:white;">View</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -256,48 +783,37 @@
             </div>
         </div>
 
+        <!-- SECTION: Settings -->
         <div id="section-settings" class="dash-section" style="display:none;">
             <div class="dash-page-header animate-fade-up">
                 <div>
                     <h1 class="dash-page-title">Settings</h1>
-                    <p class="dash-page-subtitle">Configure your account preferences.</p>
+                    <p class="dash-page-subtitle">Manage your personal details and preferences.</p>
                 </div>
             </div>
             
             <div class="dash-form-card animate-fade-up delay-1" style="max-width: 600px;">
-                <h3 style="margin-bottom: 24px; color: var(--dash-primary); font-size: 1.25rem;">Personal Information</h3>
+                <h3 style="margin-bottom: 24px; color: var(--dash-primary); font-size: 1.25rem;">Personal information</h3>
                 <div style="margin-bottom: 20px;">
                     <label style="display:block; margin-bottom:8px; color:var(--dash-text-muted); font-size:0.9rem; font-weight:500;">Full Name</label>
-                    <input type="text" class="dash-input" value="Sarah Jenkins">
+                    <input type="text" class="dash-input profile-name-input" value="Sarah Jenkins">
                 </div>
                 <div style="margin-bottom: 20px;">
                     <label style="display:block; margin-bottom:8px; color:var(--dash-text-muted); font-size:0.9rem; font-weight:500;">Email Address</label>
-                    <input type="email" class="dash-input" value="sarah@acmecorp.com">
+                    <input type="email" class="dash-input profile-email-input" value="sarah.j@techflow.com">
                 </div>
                 <div style="margin-bottom: 30px;">
-                    <label style="display:block; margin-bottom:8px; color:var(--dash-text-muted); font-size:0.9rem; font-weight:500;">Notification Preferences</label>
-                    <select class="dash-input">
-                        <option>Email & Push Notifications</option>
-                        <option>Email Only</option>
-                        <option>None</option>
-                    </select>
+                    <label style="display:block; margin-bottom:8px; color:var(--dash-text-muted); font-size:0.9rem; font-weight:500;">Phone Number</label>
+                    <input type="tel" class="dash-input" value="+1 (555) 234-5678">
                 </div>
                 <button class="btn-primary animate-fade-up delay-2" onclick="window.location.href='404.html'">Save Changes</button>
             </div>
         </div>
+        
     </div>
     </main>
 
     <script src="assets/js/dashboard.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 

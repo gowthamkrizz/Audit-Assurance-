@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Stackly</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=3.0">
+    <link rel="stylesheet" href="style.css?v=4.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -78,13 +77,13 @@
                 <!-- LEFT: Text side -->
                 <div class="contact-hero-left">
                     <p class="contact-hero-label">CONTACT US</p>
-                    <h1 class="contact-hero-title">Get In Touch <br>With Our <em>Experts</em></h1>
+                    <h1 class="contact-hero-title">Get in touch <br>with our <em>experts</em></h1>
                     <p class="contact-hero-desc">Have questions about our accounting services? Our team of certified professionals is here to help you simplify your finances and achieve long-term stability.</p>
 
                     <div class="contact-info-list">
                         <div class="contact-info-item">
                             <div class="contact-info-icon">
-                                <i class="fa-solid fa-phone"></i>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15z"/></svg>
                             </div>
                             <div>
                                 <span class="info-label">Phone</span>
@@ -93,7 +92,7 @@
                         </div>
                         <div class="contact-info-item">
                             <div class="contact-info-icon">
-                                <i class="fa-solid fa-envelope"></i>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             </div>
                             <div>
                                 <span class="info-label">Email</span>
@@ -102,11 +101,11 @@
                         </div>
                         <div class="contact-info-item">
                             <div class="contact-info-icon">
-                                <i class="fa-solid fa-location-dot"></i>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             </div>
                             <div>
                                 <span class="info-label">Office</span>
-                                <span class="info-value">MMR Complex, Salem - 636 003</span>
+                                <span class="info-value">123 Finance Ave, New York</span>
                             </div>
                         </div>
                     </div>
@@ -154,7 +153,7 @@
             <!-- RIGHT COLUMN: Green form card -->
             <div class="contact-msg-right">
                 <div class="contact-form-card">
-                    <h3 class="form-card-title">Fill The Form Below</h3>
+                    <h3 class="form-card-title">Fill the form below</h3>
                     <form class="contact-form-grid" novalidate id="contactForm">
                         <div class="form-grid-row">
                             <input type="text" placeholder="Your name" required>
@@ -231,7 +230,7 @@
                         </svg>
                     </div>
                     <p class="connect-card-label">Call us</p>
-                    <p class="connect-card-value">Mon - Sat: 8:00am - 6:00pm</p>
+                    <p class="connect-card-value">Mon ? Sat: 8:00am ? 6:00pm</p>
                 </div>
 
             </div>
@@ -308,9 +307,9 @@
             </div>
             <!-- Newsletter -->
             <div class="footer-col newsletter-col">
-                <h3>Got Event in Mind?<br>Let's collaborate.</h3>
-                <form class="newsletter-form" novalidate>
-                    <input type="email" placeholder="Enter your email">
+                <h3>Got event in mind?<br>Let's collaborate.</h3>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); window.location.href='404.html';">
+                    <input type="email" placeholder="Enter your email" required>
                     <button type="submit">Submit</button>
                 </form>
             </div>
@@ -327,7 +326,7 @@
         </div>
     </footer>
 
-    <script src="script.js?v=51"></script>
+    <script src="script.js?v=50"></script>
     <script>
     // Contact Page Hero Animations
     document.addEventListener("DOMContentLoaded", () => {
@@ -431,8 +430,6 @@
     </script>
 </body>
 </html>
-
-
 
 
 

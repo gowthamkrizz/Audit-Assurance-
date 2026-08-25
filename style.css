@@ -2,8 +2,8 @@
 
 
 /* ==========================================================================
-   STACKLY – AUDIT & ASSURANCE | COMPLETE STYLESHEET
-   Covers: index.html · about.html · services.html · blog.html · contact.html
+   STACKLY â€“ AUDIT & ASSURANCE | COMPLETE STYLESHEET
+   Covers: index.html Â· about.html Â· services.html Â· blog.html Â· contact.html
    ========================================================================== */
 
 /* =========================================================================
@@ -294,7 +294,7 @@ address {
 }
 
 /* =========================================================================
-   6.  HOME – HERO SECTION
+   6.  HOME â€“ HERO SECTION
    ========================================================================= */
 .hero {
     position: relative;
@@ -350,7 +350,7 @@ address {
 }
 
 /* =========================================================================
-   7.  HOME – ABOUT SECTION
+   7.  HOME â€“ ABOUT SECTION
    ========================================================================= */
 .about-section {
     padding: 90px 0;
@@ -412,7 +412,7 @@ address {
 }
 
 /* =========================================================================
-   8.  HOME – STATS SECTION
+   8.  HOME â€“ STATS SECTION
    ========================================================================= */
 .stats-section {
     padding: 80px 0;
@@ -475,7 +475,7 @@ address {
 }
 
 /* =========================================================================
-   9.  HOME – COMPLIANT SECTION
+   9.  HOME â€“ COMPLIANT SECTION
    ========================================================================= */
 .compliant-section {
     padding: 80px 0 0;
@@ -544,7 +544,7 @@ address {
 }
 
 /* =========================================================================
-   10.  HOME – SMARTER SECTION (dark)
+   10.  HOME â€“ SMARTER SECTION (dark)
    ========================================================================= */
 .smarter-section {
     background: var(--green);
@@ -616,7 +616,7 @@ address {
 }
 
 /* =========================================================================
-   11.  HOME – INSIGHTS SECTION
+   11.  HOME â€“ INSIGHTS SECTION
    ========================================================================= */
 .insights-section {
     padding: 80px 0;
@@ -632,19 +632,30 @@ address {
     font-size: clamp(2rem, 3.5vw, 3rem);
     color: var(--green);
     line-height: 1.2;
-    text-transform: lowercase;
+    text-transform: none !important;
 }
 
 .insights-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
+    align-items: stretch;
 }
 
 .insight-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    background: var(--white);
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font: inherit;
+    width: 100%;
     border-radius: var(--radius-md);
     overflow: hidden;
-    background: var(--white);
     box-shadow: 0 4px 24px rgba(0,0,0,0.07);
     transition: transform var(--transition), box-shadow var(--transition);
     cursor: pointer;
@@ -659,10 +670,12 @@ address {
     width: 100%;
     height: 220px;
     object-fit: cover;
+    display: block;
 }
 
 .insight-card .tag {
     display: inline-block;
+    align-self: flex-start;
     margin: 16px 20px 8px;
     background-color: var(--green-light);
     color: var(--green);
@@ -680,10 +693,11 @@ address {
     color: var(--green);
     line-height: 1.4;
     padding: 0 20px 24px;
+    margin: 0;
 }
 
 /* =========================================================================
-   12.  HOME – EXPERTISE SECTION
+   12.  HOME â€“ EXPERTISE SECTION
    ========================================================================= */
 .expertise-section {
     padding: 80px 0;
@@ -786,7 +800,7 @@ address {
 }
 
 /* =========================================================================
-   13.  HOME – CTA SECTION
+   13.  HOME â€“ CTA SECTION
    ========================================================================= */
 .cta-section {
     position: relative;
@@ -830,7 +844,7 @@ address {
 }
 
 /* =========================================================================
-   14.  FOOTER – MAIN (index / about / services / blog)
+   14.  FOOTER â€“ MAIN (index / about / services / blog)
    ========================================================================= */
 .footer-section {
     background-color: var(--green);
@@ -853,7 +867,6 @@ address {
     font-weight: 600;
     color: var(--white);
     margin-bottom: 20px;
-    text-transform: uppercase;
     letter-spacing: 0.08em;
 }
 
@@ -967,7 +980,7 @@ address {
 }
 
 .newsletter-error::before {
-    content: '⚠';
+    content: 'âš ';
     font-size: 0.78rem;
     flex-shrink: 0;
 }
@@ -1078,7 +1091,6 @@ footer.footer .link-group h4 {
     font-weight: 600;
     color: var(--white);
     margin-bottom: 16px;
-    text-transform: uppercase;
     letter-spacing: 0.07em;
 }
 
@@ -1099,7 +1111,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   15.  ABOUT PAGE – HERO SECTION
+   15.  ABOUT PAGE â€“ HERO SECTION
    ========================================================================= */
 .about-hero-section { padding: 180px 0 100px; background: linear-gradient(to right, rgba(121, 149, 74, 0.95) 0%, rgba(121, 149, 74, 0.75) 45%, rgba(0, 0, 0, 0.2) 100%), url('assets/images/about-bg-img.webp'); background-size: cover; background-position: center; position: relative; }
 
@@ -1126,7 +1138,6 @@ footer.footer .link-group ul li a:hover {
     line-height: 1.1;
     margin-bottom: 24px;
     letter-spacing: 0.02em;
-    text-transform: uppercase;
 }
 
 .about-hero-content p {
@@ -1196,7 +1207,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   16.  ABOUT PAGE – MILESTONES SECTION
+   16.  ABOUT PAGE â€“ MILESTONES SECTION
    ========================================================================= */
 .milestones-section {
     padding: 100px 0 80px;
@@ -1518,7 +1529,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   19.  ABOUT PAGE – WHY CHOOSE US
+   19.  ABOUT PAGE â€“ WHY CHOOSE US
    ========================================================================= */
 .why-choose-us-section {
     padding: 80px 0;
@@ -1673,7 +1684,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   20.  ABOUT PAGE – TEAM SECTION
+   20.  ABOUT PAGE â€“ TEAM SECTION
    ========================================================================= */
 .team-section {
     padding: 80px 0;
@@ -1805,7 +1816,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   21.  SERVICES PAGE – HERO SECTION
+   21.  SERVICES PAGE â€“ HERO SECTION
    ========================================================================= */
 .services-hero-section {
     padding: 160px 0 80px;
@@ -1938,7 +1949,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   22.  SERVICES PAGE – DETAILED SERVICES
+   22.  SERVICES PAGE â€“ DETAILED SERVICES
    ========================================================================= */
 .detailed-services-section {
     padding: 80px 0;
@@ -2041,7 +2052,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   23.  SERVICES PAGE – WHO WE ARE MASONRY
+   23.  SERVICES PAGE â€“ WHO WE ARE MASONRY
    ========================================================================= */
 .who-we-are-section {
     padding: 80px 0;
@@ -2116,7 +2127,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   24.  SERVICES PAGE – SUCCESS STORIES / TESTIMONIALS
+   24.  SERVICES PAGE â€“ SUCCESS STORIES / TESTIMONIALS
    ========================================================================= */
 .success-stories-section {
     padding: 80px 0;
@@ -2205,7 +2216,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   25.  BLOG PAGE – HERO SECTION
+   25.  BLOG PAGE â€“ HERO SECTION
    ========================================================================= */
 .blog-hero-section {
     padding: 160px 0 80px;
@@ -2273,7 +2284,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   26.  BLOG PAGE – POPULAR BLOGS GRID
+   26.  BLOG PAGE â€“ POPULAR BLOGS GRID
    ========================================================================= */
 .popular-blogs-section {
     padding: 80px 0;
@@ -2287,6 +2298,9 @@ footer.footer .link-group ul li a:hover {
 }
 
 .blog-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.07);
@@ -2341,7 +2355,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   27.  BLOG PAGE – STAGGERED INSIGHTS GRID
+   27.  BLOG PAGE â€“ STAGGERED INSIGHTS GRID
    ========================================================================= */
 .insights-staggered-grid {
     display: grid;
@@ -2361,6 +2375,9 @@ footer.footer .link-group ul li a:hover {
 .stagger-col.right-col { padding-top: 20px; }
 
 .stagger-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     background: var(--white);
     border-radius: var(--radius-md);
     overflow: hidden;
@@ -2425,7 +2442,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   28.  BLOG PAGE – CTA SECTION
+   28.  BLOG PAGE â€“ CTA SECTION
    ========================================================================= */
 .blog-cta-section {
     padding: 100px 0;
@@ -2464,10 +2481,10 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   29.  CONTACT PAGE – HERO SECTION
+   29.  CONTACT PAGE â€“ HERO SECTION
    ========================================================================= */
 /* =========================================================================
-   CONTACT PAGE – NEW HERO SECTION
+   CONTACT PAGE â€“ NEW HERO SECTION
    ========================================================================= */
 .contact-hero-section {
     min-height: 100vh; background: linear-gradient(to right, rgba(121, 149, 74, 0.95) 0%, rgba(121, 149, 74, 0.75) 50%, rgba(0, 0, 0, 0.3) 100%), url('assets/images/blog-hero.webp'); background-size: cover; background-position: center;
@@ -2728,7 +2745,7 @@ footer.footer .link-group ul li a:hover {
 
 /* Contact form section below */
 /* =========================================================================
-   CONTACT PAGE – SEND US A MESSAGE SECTION
+   CONTACT PAGE â€“ SEND US A MESSAGE SECTION
    ========================================================================= */
 .contact-msg-section {
     background-color: var(--white);
@@ -2784,7 +2801,7 @@ footer.footer .link-group ul li a:hover {
     transform: scale(1.04);
 }
 
-/* RIGHT – Green form card */
+/* RIGHT â€“ Green form card */
 .contact-msg-right {
     flex: 1.2;
     min-width: 0;
@@ -2882,7 +2899,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   CONTACT PAGE – CONNECT WITH US SECTION
+   CONTACT PAGE â€“ CONNECT WITH US SECTION
    ========================================================================= */
 .connect-section {
     background-color: var(--white);
@@ -2936,7 +2953,7 @@ footer.footer .link-group ul li a:hover {
 .connect-card-value { font-size: 1rem; color: var(--green); font-weight: 600; line-height: 1.55; margin: 0; }
 
 /* =========================================================================
-   CONTACT PAGE – MAP SECTION
+   CONTACT PAGE â€“ MAP SECTION
    ========================================================================= */
 .map-section {
     background-color: var(--white);
@@ -3076,7 +3093,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   30.  RESPONSIVE – TABLET (max 1024px)
+   30.  RESPONSIVE â€“ TABLET (max 1024px)
    ========================================================================= */
 @media (max-width: 1024px) {
     .header { padding: 0 30px; }
@@ -3129,7 +3146,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   31.  RESPONSIVE – MOBILE (max 768px)
+   31.  RESPONSIVE â€“ MOBILE (max 768px)
    ========================================================================= */
 @media (max-width: 768px) {
     .header { padding: 0 20px; }
@@ -3189,7 +3206,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   32.  RESPONSIVE – SMALL MOBILE (max 480px)
+   32.  RESPONSIVE â€“ SMALL MOBILE (max 480px)
    ========================================================================= */
 @media (max-width: 480px) {
     .hero-content h1 { font-size: 1.7rem; }
@@ -3275,7 +3292,7 @@ footer.footer .link-group ul li a:hover {
 }
 
 /* =========================================================================
-   35.  CONTACT PAGE – CUTOUT MASK (handled by clip-path on the card)
+   35.  CONTACT PAGE â€“ CUTOUT MASK (handled by clip-path on the card)
    ========================================================================= */
 .hero-cutout-mask {
     display: none;
@@ -4179,7 +4196,7 @@ input[type="password"]::-ms-reveal, input[type="password"]::-ms-clear { display:
 }
 
 .newsletter-error::before {
-    content: '⚠';
+    content: 'âš ';
     font-size: 0.78rem;
     flex-shrink: 0;
 }
@@ -4978,13 +4995,16 @@ html, body {
     }
     
     .popular-blogs-section .blog-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        border-radius: var(--radius-md) !important;
-        overflow: hidden !important;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important;
-        margin-bottom: 0 !important;
-    }
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    background: var(--white);
+    transition: transform var(--transition), box-shadow var(--transition);
+    cursor: pointer;
+}
     
     .popular-blogs-section .blog-image {
         width: 100% !important;
@@ -5284,6 +5304,11 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #5e7438 !important;
 }
+
+
+
+
+
 
 
 

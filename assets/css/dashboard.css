@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
     --dash-primary: #79954A;
@@ -83,13 +83,12 @@ body.dash-body {
     font-weight: 500;
     transition: all 0.2s ease;
     white-space: nowrap;
+    outline: none !important;
+    user-select: none;
 }
-.dash-nav-link i {
-    font-size: 1.2rem;
-    min-width: 24px;
-    display: flex;
-    justify-content: center;
-    margin-right: 16px;
+.dash-nav-link:focus, .dash-nav-link:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
 }
 .dash-nav-link:hover, .dash-nav-link.active {
     background: var(--dash-primary-light);
@@ -215,10 +214,12 @@ body.dash-body {
     font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: none;
     cursor: pointer;
+    white-space: nowrap;
 }
 .btn-primary:hover {
     transform: translateY(-2px);
@@ -653,5 +654,7 @@ body.dash-body { overflow-x: hidden; max-width: 100%; width: 100%; }
 @media (max-width: 768px) { .dash-header { position: fixed; top: 0; left: 0; right: 0; width: 100%; box-sizing: border-box; } }
 
 body { max-width: 100% !important; overflow-x: hidden !important; margin: 0; padding: 0; }
+
+
 
 

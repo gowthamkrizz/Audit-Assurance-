@@ -8,25 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css?v=4.0">
+    <link rel="stylesheet" href="login.css?v=3">
 
     <style>
-        /* Visible Side Scrollbar */
+        /* Single Clean Side Scrollbar */
         html {
             overflow-y: scroll !important;
             overflow-x: hidden !important;
             scrollbar-width: thin !important;
             scrollbar-color: #79954A #f1f5f9 !important;
         }
-        body.login-page,
-        .login-right {
-            scrollbar-width: thin !important;
-            scrollbar-color: #79954A #f1f5f9 !important;
+        body {
+            overflow-x: clip !important;
+            overflow-y: visible !important;
         }
         ::-webkit-scrollbar {
-            width: 8px !important;
-            height: 8px !important;
+            width: 7px !important;
+            height: 7px !important;
             display: block !important;
         }
         ::-webkit-scrollbar-track {
@@ -63,7 +62,7 @@
             <div class="login-left-content">
                 <div class="login-hero-text">
                     <span class="login-badge">JOIN OUR NETWORK</span>
-                    <h1>Begin Your <br>Financial <em>Journey</em></h1>
+                    <h1>Begin your <br>financial <em>journey</em></h1>
                     <p>Join thousands of businesses and individuals who rely on STACKLY to manage their finances, file taxes, and grow their wealth every day.</p>
 
                     <div class="login-features">
@@ -90,7 +89,7 @@
             <!-- Sticky header -->
             <div class="login-form-header">
                 <a href="index.html" class="back-link">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                     Back to Home
                 </a>
                 <span class="welcome-text">CREATE ACCOUNT</span>
@@ -98,7 +97,7 @@
 
             <div class="login-form-container">
                 <div class="login-form-titles">
-                    <h2>Sign <span>Up</span></h2>
+                    <h2>Sign <span>up</span></h2>
                     <p>Fill in your details below to get started with Stackly Accounting.</p>
                 </div>
 
@@ -126,7 +125,7 @@
                     <div class="form-group">
                         <label>EMAIL ADDRESS <span class="req">*</span></label>
                         <div class="input-with-icon">
-                            <i class="fa-solid fa-envelope" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                             <input type="email" id="signup-email" placeholder="you@example.com">
                         </div>
                     </div>
@@ -135,7 +134,7 @@
                     <div class="form-group">
                         <label>PHONE NUMBER <span class="optional">(OPTIONAL)</span></label>
                         <div class="input-with-icon">
-                            <i class="fa-solid fa-phone" style="min-width:20px;color:var(--green);font-size:1rem;"></i>
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             <input type="tel" id="phone" placeholder="+1 (555) 000-0000">
                         </div>
                     </div>
@@ -163,15 +162,15 @@
                         <div class="input-with-icon">
                             <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                             <input type="password" id="signup-pwd" placeholder="Min. 8 characters">
-                            <button type="button" class="password-toggle" data-target="signup-pwd" aria-label="Toggle password visibility">
-                                <i class="fa-regular fa-eye"></i>
+                            <button type="button" class="password-toggle" data-target="signup-pwd">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                             </button>
                         </div>
                         <ul class="pwd-checklist" id="signup-pwd-checklist">
                             <li id="s-len">At least 8 characters</li>
-                            <li id="s-upper">At least one uppercase letter (A-Z)</li>
-                            <li id="s-lower">At least one lowercase letter (a-z)</li>
-                            <li id="s-num">At least one number (0-9)</li>
+                            <li id="s-upper">At least one uppercase letter (AZ)</li>
+                            <li id="s-lower">At least one lowercase letter (az)</li>
+                            <li id="s-num">At least one number (09)</li>
                         </ul>
                     </div>
 
@@ -181,8 +180,8 @@
                         <div class="input-with-icon">
                             <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                             <input type="password" id="confirm-pwd" placeholder="Re-enter your password">
-                            <button type="button" class="password-toggle" data-target="confirm-pwd" aria-label="Toggle confirm password visibility">
-                                <i class="fa-regular fa-eye"></i>
+                            <button type="button" class="password-toggle" data-target="confirm-pwd">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                             </button>
                         </div>
                     </div>
@@ -217,14 +216,7 @@
             btn.addEventListener('click', function() {
                 const id = this.getAttribute('data-target');
                 const input = document.getElementById(id);
-                if (input) {
-                    const isPassword = input.type === 'password';
-                    input.type = isPassword ? 'text' : 'password';
-                    const icon = this.querySelector('i');
-                    if (icon) {
-                        icon.className = isPassword ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
-                    }
-                }
+                if (input) input.type = input.type === 'password' ? 'text' : 'password';
             });
         });
 
@@ -232,20 +224,16 @@
         const spwd = document.getElementById('signup-pwd');
         const schecklist = document.getElementById('signup-pwd-checklist');
         const schecks = { 's-len': v => v.length >= 8, 's-upper': v => /[A-Z]/.test(v), 's-lower': v => /[a-z]/.test(v), 's-num': v => /[0-9]/.test(v) };
-        if (spwd && schecklist) {
-            spwd.addEventListener('focus', () => schecklist.classList.add('active'));
-            spwd.addEventListener('blur', () => { if (!spwd.value) schecklist.classList.remove('active'); });
-            spwd.addEventListener('input', () => {
-                const v = spwd.value;
-                Object.entries(schecks).forEach(([id, fn]) => {
-                    const li = document.getElementById(id);
-                    if (li) {
-                        li.classList.toggle('pass', fn(v));
-                        li.classList.toggle('fail', v.length > 0 && !fn(v));
-                    }
-                });
+        spwd.addEventListener('focus', () => schecklist.classList.add('active'));
+        spwd.addEventListener('blur', () => { if (!spwd.value) schecklist.classList.remove('active'); });
+        spwd.addEventListener('input', () => {
+            const v = spwd.value;
+            Object.entries(schecks).forEach(([id, fn]) => {
+                const li = document.getElementById(id);
+                li.classList.toggle('pass', fn(v));
+                li.classList.toggle('fail', v.length > 0 && !fn(v));
             });
-        }
+        });
 
         // Validation
         function setError(input, msg) {
@@ -286,23 +274,23 @@
             const pwdVal = pwd.value;
             if (!pwdVal) { setError(pwd, 'Password is required.'); valid = false; }
             else if (pwdVal.length < 8) { setError(pwd, 'Password must be at least 8 characters.'); valid = false; }
-            else if (!/[A-Z]/.test(pwdVal)) { setError(pwd, 'Password must contain at least one uppercase letter (A-Z).'); valid = false; }
-            else if (!/[a-z]/.test(pwdVal)) { setError(pwd, 'Password must contain at least one lowercase letter (a-z).'); valid = false; }
-            else if (!/[0-9]/.test(pwdVal)) { setError(pwd, 'Password must contain at least one number (0-9).'); valid = false; }
+            else if (!/[A-Z]/.test(pwdVal)) { setError(pwd, 'Password must contain at least one uppercase letter.'); valid = false; }
+            else if (!/[a-z]/.test(pwdVal)) { setError(pwd, 'Password must contain at least one lowercase letter.'); valid = false; }
+            else if (!/[0-9]/.test(pwdVal)) { setError(pwd, 'Password must contain at least one number.'); valid = false; }
             else setValid(pwd);
 
             if (!cpwd.value) { setError(cpwd, 'Please confirm your password.'); valid = false; }
             else if (cpwd.value !== pwdVal) { setError(cpwd, 'Passwords do not match.'); valid = false; }
             else setValid(cpwd);
 
-            if (!terms.checked) { termsErr.textContent = 'Please agree to the Terms of Service and Privacy Policy.'; termsErr.classList.add('visible'); valid = false; }
+            if (!terms.checked) { termsErr.textContent = '? You must agree to the Terms of Service.'; termsErr.classList.add('visible'); valid = false; }
             else { termsErr.textContent = ''; termsErr.classList.remove('visible'); }
 
             if (valid) {
                 const btn = this.querySelector('.login-submit-btn');
                 btn.textContent = 'Creating account...';
                 btn.disabled = true; btn.style.opacity = '0.75';
-                setTimeout(() => { btn.innerHTML = '&#10003; Account Created!'; btn.style.background = 'var(--green)'; }, 1500);
+                setTimeout(() => { btn.textContent = '?  Account Created!'; btn.style.background = 'var(--green)'; }, 1500);
             }
         });
     })();
@@ -310,3 +298,15 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
