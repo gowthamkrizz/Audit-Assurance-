@@ -47,12 +47,13 @@ body {
     background-color: var(--white);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    transition: opacity 0.4s ease-in-out;
-    
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 body.page-transitioning {
-    opacity: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 img {

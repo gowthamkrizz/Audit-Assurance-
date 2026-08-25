@@ -1,3 +1,17 @@
+// Immediate page visibility guarantee
+(function() {
+    function ensureVisible() {
+        if (document.body) {
+            document.body.classList.remove('page-transitioning');
+            document.body.style.opacity = '1';
+            document.body.style.visibility = 'visible';
+        }
+    }
+    ensureVisible();
+    document.addEventListener('DOMContentLoaded', ensureVisible);
+    window.addEventListener('pageshow', ensureVisible);
+    window.addEventListener('load', ensureVisible);
+})();
 // Execute Redesign Animations
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Setup Text Splitting for Hero
