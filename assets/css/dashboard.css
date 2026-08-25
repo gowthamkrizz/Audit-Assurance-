@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
     --dash-primary: #79954A;
@@ -157,6 +157,11 @@ body.dash-body {
     top: 50%;
     transform: translateY(-50%);
     color: var(--dash-text-muted);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.dash-search i:hover {
+    color: var(--dash-primary);
 }
 
 .profile-widget {
@@ -654,6 +659,7 @@ body.dash-body { overflow-x: hidden; max-width: 100%; width: 100%; }
 @media (max-width: 768px) { .dash-header { position: fixed; top: 0; left: 0; right: 0; width: 100%; box-sizing: border-box; } }
 
 body { max-width: 100% !important; overflow-x: hidden !important; margin: 0; padding: 0; }
+
 
 
 

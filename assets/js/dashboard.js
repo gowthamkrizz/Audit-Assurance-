@@ -140,4 +140,85 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, 300);
+
+    // Settings Personal Information Form Save Changes Handler
+    const settingsCards = document.querySelectorAll('#section-settings .dash-form-card');
+    settingsCards.forEach(card => {
+        const saveBtn = card.querySelector('.save-settings-btn, .btn-primary');
+        if (saveBtn) {
+            saveBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const inputs = card.querySelectorAll('input, select');
+                let allFilled = true;
+
+                inputs.forEach(input => {
+                    if (!input.value || !input.value.trim()) {
+                        allFilled = false;
+                        input.style.borderColor = '#ef4444';
+                    } else {
+                        input.style.borderColor = '';
+                    }
+                });
+
+                // Remove existing feedback message if present
+                const existingMsg = card.querySelector('.settings-feedback-msg');
+                if (existingMsg) existingMsg.remove();
+
+                if (!allFilled) {
+                    const msg = document.createElement('p');
+                    msg.className = 'settings-feedback-msg';
+                    msg.style.color = '#ef4444';
+                    msg.style.fontSize = '0.85rem';
+                    msg.style.marginTop = '12px';
+                    msg.style.fontWeight = '500';
+                    msg.textContent = 'Please fill in all details before saving changes.';
+                    saveBtn.after(msg);
+                } else {
+                    window.location.href = '404.html';
+                }
+            });
+
+            // Clear red border when user types
+            card.querySelectorAll('input, select').forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.value.trim()) {
+                        this.style.borderColor = '';
+                    }
+                    const existingMsg = card.querySelector('.settings-feedback-msg');
+                    if (existingMsg) existingMsg.remove();
+                });
+            });
+        }
+    });
+
+    // Search bar functionality
+    const searchBars = document.querySelectorAll('.dash-search');
+    searchBars.forEach(searchBar => {
+        const input = searchBar.querySelector('input');
+        const searchIcon = searchBar.querySelector('i');
+
+        function triggerSearch() {
+            if (input && input.value.trim().length > 0) {
+                window.location.href = '404.html';
+            } else if (input) {
+                input.focus();
+            }
+        }
+
+        if (searchIcon) {
+            searchIcon.style.cursor = 'pointer';
+            searchIcon.addEventListener('click', triggerSearch);
+        }
+
+        if (input) {
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    triggerSearch();
+                }
+            });
+        }
+    });
 });
+
+

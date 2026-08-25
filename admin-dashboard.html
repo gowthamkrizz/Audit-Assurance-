@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -702,24 +702,20 @@
             </div>
             
             <div class="dash-form-card animate-fade-up delay-1" style="max-width: 600px;">
-                <h3 style="margin-bottom: 24px; color: var(--dash-primary); font-size: 1.25rem;">Company profile</h3>
+                <h3 style="margin-bottom: 24px; color: var(--dash-primary); font-size: 1.25rem;">Personal information</h3>
                 <div style="margin-bottom: 20px;">
-                    <label style="display:block; margin-bottom:8px; color:var(--dash-text-muted); font-size:0.9rem; font-weight:500;">Company Name</label>
-                    <input type="text" class="dash-input" value="Stackly Financial">
+                    <label style="display:block; margin-bottom:8px; color:var(--dash-text-muted); font-size:0.9rem; font-weight:500;">Full Name <span style="color:#ef4444;">*</span></label>
+                    <input type="text" class="dash-input profile-name-input" value="Admin User" placeholder="Enter full name" required>
                 </div>
                 <div style="margin-bottom: 20px;">
-                    <label style="display:block; margin-bottom:8px; color:var(--dash-text-muted); font-size:0.9rem; font-weight:500;">Support Email</label>
-                    <input type="email" class="dash-input" value="support@stackly.com">
+                    <label style="display:block; margin-bottom:8px; color:var(--dash-text-muted); font-size:0.9rem; font-weight:500;">Email Address <span style="color:#ef4444;">*</span></label>
+                    <input type="email" class="dash-input profile-email-input" value="admin@stackly.com" placeholder="Enter email address" required>
                 </div>
                 <div style="margin-bottom: 30px;">
-                    <label style="display:block; margin-bottom:8px; color:var(--dash-text-muted); font-size:0.9rem; font-weight:500;">Timezone</label>
-                    <select class="dash-input">
-                        <option>UTC (GMT+0)</option>
-                        <option>EST (GMT-5)</option>
-                        <option>PST (GMT-8)</option>
-                    </select>
+                    <label style="display:block; margin-bottom:8px; color:var(--dash-text-muted); font-size:0.9rem; font-weight:500;">Phone Number <span style="color:#ef4444;">*</span></label>
+                    <input type="tel" class="dash-input" value="+1 (555) 019-2834" placeholder="Enter phone number" required>
                 </div>
-                <button class="btn-primary animate-fade-up delay-2" onclick="window.location.href='404.html'">Save Changes</button>
+                <button type="button" class="btn-primary animate-fade-up delay-2 save-settings-btn">Save Changes</button>
             </div>
         </div>
         

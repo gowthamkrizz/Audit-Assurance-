@@ -57,6 +57,7 @@
             display: flex;
             gap: 16px;
             justify-content: center;
+            flex-wrap: wrap;
         }
         .btn-outline {
             display: inline-flex;
@@ -68,6 +69,7 @@
             text-decoration: none;
             border-radius: 4px;
             font-weight: 500;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
         .btn-outline:hover {
@@ -84,6 +86,7 @@
             text-decoration: none;
             border-radius: 4px;
             font-weight: 500;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
         .btn-primary-error:hover {
@@ -130,17 +133,19 @@
             <p class="error-desc">Oops! The page you're looking for doesn't seem to exist. It might have been moved or deleted, or perhaps the URL is incorrect.</p>
             <div class="error-actions">
                 <a href="index.html" class="btn-primary-error">Back to Home</a>
-                <a href="javascript:history.back()" class="btn-outline">Back to Previous</a>
+                <a href="javascript:void(0);" onclick="goBack()" class="btn-outline">Back to Previous</a>
             </div>
         </div>
     </div>
+
+    <script>
+        function goBack() {
+            if (window.history.length > 1 && document.referrer) {
+                window.history.back();
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-

@@ -1,4 +1,4 @@
-﻿// Execute Redesign Animations
+// Execute Redesign Animations
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Setup Text Splitting for Hero
     if(document.querySelector('.hero-content h1')) {
@@ -205,25 +205,16 @@ document.addEventListener("DOMContentLoaded", () => {
 // --- PREMIUM REDESIGN LOGIC ---
 
 // Page Transition Logic
-document.addEventListener("DOMContentLoaded", () => {
-    // Fade in on load
-    document.body.classList.remove('page-transitioning');
+function clearPageTransition() {
+    if (document.body) {
+        document.body.classList.remove('page-transitioning');
+    }
+}
 
-    // Intercept clicks on local links
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            const target = this.getAttribute('href');
-            // Only intercept local HTML links without target="_blank"
-            if (target && target.endsWith('.html') && !this.getAttribute('target')) {
-                e.preventDefault();
-                document.body.classList.add('page-transitioning');
-                setTimeout(() => {
-                    window.location.href = target;
-                }, 400); // Wait for CSS transition (400ms)
-            }
-        });
-    });
-});
+document.addEventListener("DOMContentLoaded", clearPageTransition);
+window.addEventListener("pageshow", clearPageTransition);
+window.addEventListener("load", clearPageTransition);
+clearPageTransition();
 
 // Utility: Split text into words for GSAP
 function splitTextToWords(selector) {
