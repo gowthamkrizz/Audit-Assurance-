@@ -141,13 +141,14 @@
             <p class="error-desc">Oops! The page you're looking for doesn't seem to exist. It might have been moved or deleted, or perhaps the URL is incorrect.</p>
             <div class="error-actions">
                 <a href="index.html" class="btn-primary-error">Back to Home</a>
-                <button type="button" onclick="goBack()" class="btn-outline">Back to Previous</button>
+                <a href="javascript:void(0);" id="backToPrevLink" class="btn-outline">Back to Previous</a>
             </div>
         </div>
     </div>
 
     <script>
-        function goBack() {
+        function handleGoBack(e) {
+            if (e) e.preventDefault();
             if (window.history && window.history.length > 1) {
                 window.history.back();
             } else if (document.referrer && !document.referrer.includes('404.html') && !document.referrer.endsWith('/404')) {
@@ -160,6 +161,11 @@
                     window.location.href = 'index.html';
                 }
             }
+        }
+
+        var backBtn = document.getElementById('backToPrevLink');
+        if (backBtn) {
+            backBtn.onclick = handleGoBack;
         }
     </script>
 </body>
