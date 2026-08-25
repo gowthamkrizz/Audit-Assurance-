@@ -1,4 +1,4 @@
-// Execute Redesign Animations
+﻿// Execute Redesign Animations
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Setup Text Splitting for Hero
     if(document.querySelector('.hero-content h1')) {
@@ -1313,4 +1313,82 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+});
+
+// =========================================================================
+// FOOTER NEWSLETTER JAVASCRIPT VALIDATION (REPLACES NATIVE VALIDATION)
+// =========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+    const newsletterForms = document.querySelectorAll('.newsletter-form');
+    
+    newsletterForms.forEach(form => {
+        form.setAttribute('novalidate', 'true');
+        
+        const input = form.querySelector('input');
+        const btn = form.querySelector('button');
+        
+        // Find or create error element
+        let errorEl = form.parentElement.querySelector('.newsletter-error');
+        if (!errorEl) {
+            errorEl = document.createElement('div');
+            errorEl.className = 'newsletter-error';
+            form.after(errorEl);
+        }
+        
+        function validateEmail(value) {
+            const trimmed = value.trim();
+            if (!trimmed) {
+                return { valid: false, message: 'Email address is required.' };
+            }
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regex.test(trimmed)) {
+                return { valid: false, message: 'Please enter a valid email address.' };
+            }
+            return { valid: true };
+        }
+        
+        function showError(msg) {
+            errorEl.textContent = msg;
+            errorEl.classList.add('visible');
+            form.classList.add('input-error');
+        }
+        
+        function clearError() {
+            errorEl.textContent = '';
+            errorEl.classList.remove('visible');
+            form.classList.remove('input-error');
+        }
+        
+        if (input) {
+            input.addEventListener('input', () => {
+                if (form.classList.contains('input-error')) {
+                    const result = validateEmail(input.value);
+                    if (result.valid) {
+                        clearError();
+                    }
+                }
+            });
+        }
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const val = input ? input.value : '';
+            const result = validateEmail(val);
+            
+            if (!result.valid) {
+                showError(result.message);
+                if (input) input.focus();
+            } else {
+                clearError();
+                if (btn) {
+                    btn.textContent = 'Submitted!';
+                    btn.style.background = '#5e7438';
+                    btn.disabled = true;
+                }
+                setTimeout(() => {
+                    window.location.href = '404.html';
+                }, 600);
+            }
+        });
+    });
 });
